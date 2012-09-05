@@ -26,7 +26,7 @@
         var D = 30000;
         var ai = "http://vod.xunlei.com/";
         var aa = "http://dynamic.vod.lixian.xunlei.com/";
-        var G = "http://127.0.0.1:1218/chydb";
+        var G = "http://i.vod.xunlei.com/";
         var L = new Date().getTime();
         function O(e) {
             return document.getElementById(e)
