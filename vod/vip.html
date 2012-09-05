@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>播放特权 弹窗播放页</title>
+<script type="text/javascript" src="Scripts/base64.js"></script>
+<script type="text/javascript" src="Scripts/urlconvert.js"></script>
+</head>
+<body style="padding:0px;margin:0px;">
+<style type="text/css">
+html, body 
+{
+  overflow: hidden;
+}
+</style>
+<script type="text/javascript">
+	var isUndef = function(a) {
+		return typeof a == "undefined";
+	};
+	var isNull = function(a) {
+		return typeof a == "object" && !a;
+	};
+	var $PU = function(parameter, url) {
+			url = isUndef(url) ? location.href : url;
+			var result = url.match(new RegExp("[\#|\?]([^#]*)[\#|\?]?"));
+			url = "&" + (isNull(result) ? "" : result[1]);
+    			url = Thunderdecode(url);
+			result = url.match(new RegExp("&" + parameter + "=", "i"));
+			return isNull(result) ? undefined : url.substr(result.index+1).split("&")[0].split("=")[1];
+		};
+	var decode = function(str){
+			var r = '';
+			try {r = decodeURIComponent(decodeURIComponent(str));} catch(e) {try {r = decodeURIComponent(str);} catch(e) {r = str;} }
+			return r;
+		}
+	var gcid = $PU('gcid'),cid=$PU('cid'),filesize=$PU('filesize'),url=$PU('url'),filename=$PU('filename'),from=$PU('from'),enable_panel=$PU('enable_panel'),autoplay=$PU('autoplay'),share_url = $PU('share_url'),enable_download = $PU('enable_download'),enable_caption=$PU('enable_caption'),enable_filelist=$PU('enable_filelist'),enable_setting=$PU('enable_setting'),enable_kkva=$PU('enable_kkva'),start=$PU('start'),format=$PU('format'),uvs=$PU('uvs');//userid=$PU('u'),isvip=$PU('v'),sessionid=$PU('s'),
+	var decodeUrl = decode(url);
+	if(decodeUrl.substr(0,5)=='bt://')
+		type ='bt';
+	if(decodeUrl.indexOf('/')==0)
+		url = encodeURIComponent(decodeUrl.substr(1,decodeUrl.length));
+	if(!filesize || filesize=='undefined' || filesize=='null')
+		filesize = '';
+	if(!gcid || gcid=='undefined' || gcid=='null')
+		gcid = '';
+	if(!cid || cid=='undefined' || cid=='null')
+		cid = '';
+	if(!filename || filename=='undefined' || filename=='null')
+		filename = '';
+	else
+		filename = decode(filename);
+	if(!share_url || share_url=='undefined' || share_url=='null')
+		share_url = '';
+	if(!start || start=='undefined' || start=='null')
+		start = 0;
+	if(format !='g' && format!='c')
+		format = 'p';
+
+
+
+	from=from||'vod_mini';
+	document.write("<div name='XL_CLOUD_VOD_PLAYER' style='width:100%;height:100%;background:#000;position:absolute;' from='"+from+"' id='XL_CLOUD_VOD_PLAYER'>"
+	+"<img  src='http://vod.lixian.xunlei.com/img/player_startup.jpg' width='100%' height='100%' />"
+	+"<span href=\""+url+"\" width='100%'"+" height='100%'"+ "enable_panel='"+enable_panel+"' autoplay='true' share_url=\""+share_url+"\" gcid='"+gcid+"' enable_download='"+enable_download+"' enable_caption='"+enable_caption+"' enable_filelist='"+enable_filelist+"' enable_setting='"+enable_setting+"'enable_kkva='"+enable_kkva+"' cid='"+cid+"' url=\""+url+"\" filesize='"+filesize+"' title=\""+filename+"\" start='"+start+"' format='"+format+"' enable_openwindow='false'>"+filename+"</span>"
+	+"</div>");
+</script>
+<script>
+      (function(){
+			var x = document.createElement('script');
+			x.src="http://127.0.0.1:1218/dl";
+        x.onerror=function(){alert('请先运行彩虹云点播 PC客户端');}
+			document.body.appendChild(x);
+		})()
+</script>
+</body>
+</html>
