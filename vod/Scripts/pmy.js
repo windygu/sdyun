@@ -75,7 +75,7 @@ function clear1() {
     document.getElementById("url").value = aa1
 };
 function SetSelect(str) {
-    var html = '<iframe id="play_frame" frameborder="0" scrolling="no" src="/svn/sdyun/vip.html?url=' + ThunderEncode(encodeURIComponent(str)) + '" width="100%" height="100%" ></iframe>';
+    var html = '<iframe id="play_frame" frameborder="0" scrolling="no" src="/svn/vod/vip.html?url=' + ThunderEncode(encodeURIComponent(str)) + '" width="100%" height="100%" ></iframe>';
     $("#play_html").attr("width", "100%");
     $("#play_html").attr("height", "100%");
     $("#play_html").html(html)
