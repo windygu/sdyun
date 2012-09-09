@@ -932,7 +932,7 @@ function flv_playerEvent(event,value){
 	}else if (event=='onopen'){
 		instance.setLastEvent('onopen',1);
 		//G_PLAYER_INSTANCE.lastEvent = 'onopen';
-G_PLAYER_INSTANCE.setNoticeMsg("欢迎使用彩虹云点播！ \u8bf7\u8bb0\u4f4f\u6211\u4eec\u7684\u7f51\u7ad9 <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://ddtv1.cn/?y')\">ddtv1.cn</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://ddtv1.cn/xz/iptv.exe')\">彩虹家族卫星直播</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://y.ddtv1.cn/?rj')\">彩虹云点播[网页版]</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=ddtv1.cn&Menu=yes')\">联系QQ：706258852</a>",15);
+G_PLAYER_INSTANCE.setNoticeMsg("\u677E\u8FBE\u7535\u8111\u79D1\u6280\uFF0D\uFF0D\u6B22\u8FCE\u60A8\u7684\u4F7F\u7528\u0020\u0020\u0020\u5982\u679C\u7535\u5F71\u70B9\u64AD\u51FA\u73B0\u95EE\u9898\uFF0C\u8BF7\u7528\u0051\u0051\u8054\u7CFB\u544A\u77E5\u6211\u4EEC\uFF0C\u8C22\u8C22\u5408\u4F5C\u3002\u002d\u002d\u002d\u002d\u002d\u5C0F\u677E\u7EF4\u62A4",15);
 	}else if (event=='onStop'){
 		V.stopPos = G_PLAYER_INSTANCE.getPlayPosition();
 		//G_PLAYER_INSTANCE.lastEvent = 'onStop';

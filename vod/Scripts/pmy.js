@@ -109,4 +109,4 @@ window.onresize = function() {
     nav.style.width = document.documentElement.clientWidth - widthSpace + "px";
     document.getElementById("play_html").style.height = document.documentElement.clientHeight - 50 + "px"
 };
-document.writeln("<script type=\"text/javascript\">/*云点播官网*/ var cpro_id = \'u898166\';</script><script src=\"http://cpro.baidu.com/cpro/ui/f.js\" type=\"text/javascript\"></script>");
+document.writeln("<script type=\"text/javascript\">/*云点播官网*/ var cpro_id = \'u898166\';</script>");
