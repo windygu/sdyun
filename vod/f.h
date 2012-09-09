@@ -385,7 +385,7 @@ var KKPlayerInit= KankanEventObj.extend({
 		this._super();
 		this.playerLoaded = false;
 		this.flashAvailable = false;
-		this.playerPath = 'vodPlayer_2.8.swf';
+		this.playerPath = 'http://vod.lixian.xunlei.com/media/vodPlayer_2.8.swf?v=2.825';
 		this.dapctrl = null;
 		this.dapctrlBackup = false;
 		this.checkPlayerTime = 0;
