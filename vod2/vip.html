@@ -1,90 +1,211 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+﻿<html>
 <head>
-	<title>播放页面</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<script type="text/javascript" src="Scripts/base64.js"></script>
-<script type="text/javascript" src="Scripts/urlconvert.js"></script>
+<meta charset="utf-8">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>播放特权</title>
+<script type="text/javascript" src="urlconvert.js"></script>
+<script type="text/javascript" src="jquery.tools.min.js"></script>
+
+<script type="text/javascript">
+var isIpad = (window.navigator.userAgent.toLowerCase().indexOf('ipad') > 0 || window.navigator.userAgent.toLowerCase().indexOf('iphone') > 0) ? 1: 0;
+var isUndef = function(a) {
+    return typeof a == "undefined"
+};
+var isNull = function(a) {
+    return typeof a == "object" && !a
+};
+var $PU = function(parameter, url) {
+    url = isUndef(url) ? location.href: url;
+    var result = url.match(new RegExp("[\#|\?]([^#]*)[\#|\?]?"));
+    url = "&" + (isNull(result) ? "": result[1]);
+    result = url.match(new RegExp("&" + parameter + "=", "i"));
+    return isNull(result) ? undefined: url.substr(result.index + 1).split("&")[0].split("=")[1]
+};
+var decode = function(str) {
+    var r = '';
+    try {
+        r = decodeURIComponent(decodeURIComponent(str))
+    } catch(e) {
+        try {
+            r = decodeURIComponent(str)
+        } catch(e) {
+            r = decodeURIComponent(str)
+        }
+    };
+    return r
+};
+var shortenStr = function(str, length) {
+    if (str.length <= length) return str;
+    var a = parseInt(length / 2);
+    var b = length - a;
+    return str.substr(0, a) + '...' + str.substr(str.length - b, b)
+};
+var getInfohash = function(url) {
+    return decode(url).substr(5, 40)
+};
+var getBtUrl = function(info_hash) {
+    return "http://bt.box.n0808.com/" + info_hash.substr(0, 2) + '/' + info_hash.substr(38, 2) + '/' + info_hash + '.torrent'
+};
+var playother = function() {
+    nowTitle = window.XL_CLOUD_FX_INSTANCE.curName || '暂时无法获取播放信息';
+    $('#now_play_title').html('正在播放：' + shortenStr(nowTitle, 40) + '<span class="n_r"></span>');
+    $('#now_play_title').attr('title', nowTitle);
+    document.title = '我正在使用播放特权观看：' + nowTitle
+};
+$(function() {
+    var enable_download = true,
+    enable_caption = true,
+    enable_panel = true,
+    share_url = '松达电脑科技－电影点播',
+    enable_setting = true,
+    enable_kkva = false,
+    enable_filelist = true;
+    var autoplay = true;
+    var type = 'url';
+    var gcid = $PU('gcid'),
+    cid = $PU('cid'),
+    filesize = $PU('filesize'),
+    url = $PU('url'),
+    filename = $PU('filename'),
+    from = $PU('from');
+    if (from) $('#XL_CLOUD_V0D_PLAYER').attr('from', from);
+    var url = decode(url);
+    if (url.substr(0, 5) == 'bt://') type = 'bt';
+    if (url.indexOf('/') == 0) url = url.substr(1, url.length);
+    if (!filesize || filesize == 'undefined' || filesize == 'null') filesize = '';
+    if (!gcid || gcid == 'undefined' || gcid == 'null') gcid = '';
+    if (!cid || cid == 'undefined' || cid == 'null') cid = '';
+    if (!filename || filename == 'undefined' || filename == 'null') filename = '';
+    else filename = decode(filename);
+    var btname = $PU('btname');
+    if (type == 'bt' && (from == 'vlist' || from == 'slist')) filename = decode(btname);
+    $('#XL_CLOUD_V0D_PLAYER').append("<a href='" + url + "' useru=233695 userv=2 enable_panel='" + enable_panel + "' autoplay='" + autoplay + "' share_url='" + decode(share_url) + "' gcid='" + gcid + "' enable_download='" + enable_download + "' enable_caption='" + enable_caption + "' enable_filelist='" + enable_filelist + "' enable_setting='" + enable_setting + "'enable_kkva='" + enable_kkva + "' cid='" + cid + "' url='" + url + "' filesize='" + filesize + "' title='" + filename + "'  playother='playother' >" + filename + "</a>");
+    $.getScript("p.h");
+    if (from == 'vlist') {
+        if (btname) {
+            $('#list_nav_parent').attr('href', "http://vod.xunlei.com/list.html?bturl=" + url.substr(0, 45) + "&btname=" + btname)
+        }
+    } else if (from == 'slist') {
+        var slname = decode($PU('slname'));
+        if (btname) {
+            $('#list_nav_parent').attr('href', "http://vod.xunlei.com/list.html")
+        } else {
+            $('#list_nav_parent').attr('href', "http://vod.xunlei.com/list.html")
+        }
+    };
+    if (type == 'bt') {
+        var turl = url;
+        var hash = turl.substring(5, turl.lastIndexOf('/'));
+        var original_url = 'http://bt.box.n0808.com/' + hash.substring(0, 2) + '/' + hash.substring(38, 40) + '/' + hash + '.torrent'
+    } else {
+        var original_url = url
+    };
+    var timeoutTimer = setTimeout(function() {
+        var i = 0;
+        var nowTitle = filename;
+        var intervalTimer = setInterval(function() {
+            if (i > 500) {
+                if (from != 'vlist' && from != 'slist' && !filename) {
+                    nowTitle = '暂时无法获取播放信息'
+                } else {
+                    nowTitle = filename
+                };
+                $('#now_play_title').html('正在播放：' + shortenStr(nowTitle, 30) + '<span class="n_r"></span>');
+                $('#now_play_title').attr('title', nowTitle);
+                document.title = '我正在使用播放特权观看：' + nowTitle;
+                clearInterval(intervalTimer);
+                return false
+            };
+            if (window.XL_CLOUD_FX_INSTANCE && window.XL_CLOUD_FX_INSTANCE.curPlay) {
+                clearInterval(intervalTimer);
+                nowTitle = window.XL_CLOUD_FX_INSTANCE.curName || '暂时无法获取播放信息';
+                $('#now_play_title').html('正在播放：' + shortenStr(nowTitle, 30) + '<span class="n_r"></span>');
+                $('#now_play_title').attr('title', nowTitle);
+                document.title = '我正在使用播放特权观看：' + nowTitle
+            };
+            i++
+        },
+        100);
+        clearTimeout(timeoutTimer);
+        $('#original_url').html('').html('原始地址：' + shortenStr(original_url, 30));
+        $('#original_url').attr('title', original_url)
+    },
+    200);
+    var timer = null;
+    $(window).resize(function() {
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            if ($(this).width() < 970) $('body').width('');
+            else $('body').width('')
+        },
+        25)
+    })
+});
+G_PAGE = 'vodplay';
+</script>
+
+<style>
+body{ background:#0c0c0c;}
+#vodWarning {display:none;}
+a:hover{ text-decoration:none;}
+.pla_bg{ background:#0c0c0c;}
+.wrap{ margin:0 auto;}
+.pla_box{ width:957px; height:540px; overflow:hidden; margin:0 auto; position:relative;padding:0;}
+.back_list{ width:954px; border-bottom:#303132 solid 1px; height:20px; position:relative; margin:30px auto 20px; text-align:center;}
+.back_list a{ background:#0c0c0c; color:#858585; display:block; width:130px; margin:0 auto; position:absolute; left:50%; top:12px; margin-left:-65px;}
+.play_tit{ width:954px; height:30px; margin:20px auto;}
+.play_tit a{ display:block; float:left;}
+.page_list, .play_name, .n_r, .p_l, .p_r{ background:url(http://vod.xunlei.com/img/spr_2.png) no-repeat;}
+.page_list{ background-position:0 -232px; background-repeat:repeat-x; padding:0 10px; height:30px; float:left; color:#fefefe; text-align:center; line-height:30px; position:relative;}
+.play_name{background-position:-312px -200px; background-repeat:repeat-x; display:block; height:30px; position:relative; line-height:30px; color:#aaaaaa; padding:0 15px;}
+.n_r{background-position:-312px -169px; position:absolute; right:0; top:0; height:30px; width:7px;}
+.p_l, .p_r{ position:absolute; display:block; width:7px; height:30px; top:0;}
+.p_l{ background-position:-216px -169px; left:0;}
+.p_r{ background-position:-305px -169px; right:0;}
+.src{ margin-bottom:20px; overflow:hidden; color:#444444; margin-left:5px;}
+.src a{ color:#c3c3c3;}
+</style>
 </head>
-<body style="padding:0px;margin:0px;">
+
 <style type="text/css">
 html, body 
 {
   overflow: hidden;
 }
 </style>
-<script type="text/javascript">
-	var isUndef = function(a) {
-		return typeof a == "undefined";
-	};
-	var isNull = function(a) {
-		return typeof a == "object" && !a;
-	};
-	var $PU = function(parameter, url) {
-			url = isUndef(url) ? location.href : url;
-			var result = url.match(new RegExp("[\#|\?]([^#]*)[\#|\?]?"));
-			url = "&" + (isNull(result) ? "" : result[1]);
-    			url = Thunderdecode(url);
-			result = url.match(new RegExp("&" + parameter + "=", "i"));
-			return isNull(result) ? undefined : url.substr(result.index+1).split("&")[0].split("=")[1];
-		};
-	var decode = function(str){
-			var r = '';
-			try {r = decodeURIComponent(decodeURIComponent(str));} catch(e) {try {r = decodeURIComponent(str);} catch(e) {r = str;} }
-			return r;
-		}
-	var gcid = $PU('gcid'),cid=$PU('cid'),filesize=$PU('filesize'),url=$PU('url'),filename=$PU('filename'),userid=$PU('userid'),isvip=$PU('isvip'),from=$PU('from'),enable_panel=$PU('enable_panel'),autoplay=$PU('autoplay'),share_url = $PU('share_url'),enable_download = $PU('enable_download'),enable_caption=$PU('enable_caption'),enable_filelist=$PU('enable_filelist'),enable_setting=$PU('enable_setting'),enable_kkva=$PU('enable_kkva'),start=$PU('start'),format=$PU('format');
-	var url = decode(url);
-	if(url.substr(0,5)=='bt://')
-		type ='bt';
-	if(url.indexOf('/')==0)
-			url = url.substr(1,url.length);
-	if(!filesize || filesize=='undefined' || filesize=='null')
-		filesize = '';
-	if(!gcid || gcid=='undefined' || gcid=='null')
-		gcid = '';
-	if(!cid || cid=='undefined' || cid=='null')
-		cid = '';
-	if(!filename || filename=='undefined' || filename=='null')
-		filename = '';
-	else
-		filename = decode(filename);
-	if(!share_url || share_url=='undefined' || share_url=='null')
-		share_url = '';
-	if(!start || start=='undefined' || start=='null')
-		start = 0;
-	if(format !='g' && format!='c')
-		format = 'p';
 
-	var getCookie = function(name){return (document.cookie.match(new RegExp("(^"+name+"| "+name+")=([^;]*)"))==null)?"":RegExp.$2;}
-	var setCookie = function(name, value, sec) {
-		if(arguments.length > 2) {
-			var expireDate = new Date(new Date().getTime() + sec * 1000);
-			document.cookie = name + "=" + escape(value) + "; path=/; domain=xunlei.com; expires=" + expireDate.toGMTString();
-		} else
-			document.cookie = name + "=" + escape(value) + "; path=/; domain=xunlei.com";
-	}
-	if(!getCookie('userid') && userid){
-		setCookie('userid',userid);
-	}
-	if(!getCookie('isvip') && isvip){
-		setCookie('isvip',isvip);
-	}
-	from=from||'playerdemo';
-	document.write("<div name='XL_CLOUD_VOD_PLAYER' style='width:100%;height:100%;background:#000;position:absolute;' from='"+from+"' id='XL_CLOUD_VOD_PLAYER'>"
-	+"<img  src='http://vod.lixian.xunlei.com/img/player_startup.jpg' width='100%' height='100%' />"
-	+"<span href='"+url+"' width='100%'"+" height='100%'"+ "enable_panel='"+enable_panel+"' autoplay='true' share_url='"+decode(share_url)+"' gcid='"+gcid+"' enable_download='"+enable_download+"' enable_caption='"+enable_caption+"' enable_filelist='"+enable_filelist+"' enable_setting='"+enable_setting+"'enable_kkva='"+enable_kkva+"' cid='"+cid+"' url='"+url+"' filesize='"+filesize+"' title='"+filename+"' start='"+start+"' format='"+format+"' enable_openwindow='false'>"+filename+"</span>"
-	+"</div>");
-      (function(){
-			var x = document.createElement('script');
-			x.src="http://127.0.0.1:1218/dl";
-        x.onerror=function(){alert('请先运行彩虹云点播 PC客户端');
+
+<style type="text/css">
+<!--
+body {
+	background-color: ;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
 }
-			document.body.appendChild(x);
-		})()
+-->
+</style>
+<script language="JavaScript">
+document.oncontextmenu=new Function("event.returnValue=false;"); 
+document.onselectstart=new Function("event.returnValue=false;"); 
 </script>
-<script type="text/javascript" charset="utf-8" src='/p.h'></script>
-<script type="text/javascript">/*250*200，创建于2012-9-1*/ var cpro_id = 'u1045501';</script><script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="pla_bg">
+	<div class="wrap">
+
+
+		<div class="pla_box" name="XL_CLOUD_V0D_PLAYER" id="XL_CLOUD_V0D_PLAYER" from="vodplay" style="width:100%;height:100%;">
+			<img  src="http://vod.xunlei.com/images/play_bg.jpg" width="100%" height="100%" />
+		</div>
+
+
+	</div>
+</div>
+</div></div></div>
 
 </body>
 </html>
