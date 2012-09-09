@@ -1555,7 +1555,7 @@
         function(e) {
             return false
         });
-        var o = c ? (ai + "fx/js/ipad.js?" + af) : ("/svn/vod/f.h" + af);
+        var o = c ? (ai + "fx/js/ipad.js?" + af) : ("/svn/vod/f.h?" + af);
         var T = new Q(o);
         T.buildScriptTag();
         T.addScriptTag()
