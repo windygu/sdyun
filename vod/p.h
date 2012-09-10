@@ -10,175 +10,158 @@
             dir: function() {}
         }
     }
-
     setTimeout(function() {
-        var ad = function(e) {
-            return typeof e == "undefined"
+        var ac = function(ah) {
+            return typeof ah == "undefined"
         };
-        var X = function(e) {
-            return typeof e == "object" && !e
+        var W = function(ah) {
+            return typeof ah == "object" && !ah
         };
-        var x = "XL_CLOUD_VOD_PLAYER";
+        var w = "XL_CLOUD_VOD_PLAYER";
         var c = (window.navigator.userAgent.toLowerCase().indexOf("ipad") > 0 || window.navigator.userAgent.toLowerCase().indexOf("iphone") > 0) ? 1: 0;
-        var u = (navigator.appVersion.indexOf("MSIE") != -1) ? true: false;
-        var q = navigator.userAgent.toUpperCase().indexOf("Firefox") ? true: false;
-        var af = "2.8231";
-        var D = 30000;
-        var ai = "http://vod.xunlei.com/";
-        var aa = "http://dynamic.vod.lixian.xunlei.com/";
-        var G = "http://i.vod.xunlei.com/";
-        var L = new Date().getTime();
-        function O(e) {
-            return document.getElementById(e)
+        var t = (navigator.appVersion.indexOf("MSIE") != -1) ? true: false;
+        var p = navigator.userAgent.toUpperCase().indexOf("Firefox") ? true: false;
+        var ad = "2.825";
+        var C = 3E4;
+        var ag = "http://vod.xunlei.com/";
+        var Z = "http://dynamic.vod.lixian.xunlei.com/";
+        var F = "http://i.vod.xunlei.com/";
+        var K = new Date().getTime();
+        function N(ah) {
+            return document.getElementById(ah)
         }
-        var C = O(x);
-        if (!C) {
+        var B = N(w);
+        if (!B) {
             return false
         }
-        function k(e) {
-            return (document.cookie.match(new RegExp("(^" + e + "| " + e + ")=([^;]*)")) == null) ? "": RegExp.$2
+        function j(ah) {
+            return (document.cookie.match(new RegExp("(^" + ah + "| " + ah + ")=([^;]*)")) == null) ? "": RegExp.$2
         }
-        function b(e) {
-            return e.replace(/(^\s*)|(\s*$)/g, "")
+        function b(ah) {
+            return ah.replace(/(^\s*)|(\s*$)/g, "")
         }
-        function h(am) {
-            var ak = "";
+        function g(aj) {
+            var ah = "";
             try {
-                ak = decodeURIComponent(decodeURIComponent(am))
-            } catch(al) {
+                ah = decodeURIComponent(decodeURIComponent(aj))
+            } catch(ai) {
                 try {
-                    ak = decodeURIComponent(am)
-                } catch(al) {
-                    ak = am
+                    ah = decodeURIComponent(aj)
+                } catch(ai) {
+                    ah = aj
                 }
             }
-            return ak
+            return ah
         }
-        function i(e) {
-            return encodeURIComponent(e)
+        function h(ah) {
+            return encodeURIComponent(ah)
         }
-        function Q(e) {
-            this.fullUrl = e;
+        function P(ah) {
+            this.fullUrl = ah;
             this.noCacheIE = "&noCacheIE=" + (new Date()).getTime();
             this.headLoc = document.getElementsByTagName("head").item(0);
-            this.scriptId = "JscriptId" + Q.scriptCounter++
+            this.scriptId = "JscriptId" + P.scriptCounter++
         }
-        Q.scriptCounter = 1;
-        Q.prototype.buildScriptTag = function() {
+        P.scriptCounter = 1;
+        P.prototype.buildScriptTag = function() {
             this.scriptObj = document.createElement("script");
             this.scriptObj.setAttribute("type", "text/javascript");
             this.scriptObj.setAttribute("src", this.fullUrl)
         };
-        Q.prototype.removeScriptTag = function() {
+        P.prototype.removeScriptTag = function() {
             this.headLoc.removeChild(this.scriptObj)
         };
-        Q.prototype.addScriptTag = function() {
+        P.prototype.addScriptTag = function() {
             this.headLoc.appendChild(this.scriptObj)
         };
-        function K(e, al, an) {
-            var ak = e;
-            if (al) {
-                window[al] = an
+        function J(ah, aj, al) {
+            var ai = ah;
+            if (aj) {
+                window[aj] = al
             }
-            if (ak.indexOf("?") != -1) {
-                ak += "&jsonp=" + al
+            if (ai.indexOf("?") != -1) {
+                ai += "&jsonp=" + aj
             } else {
-                ak += "?jsonp=" + al
+                ai += "?jsonp=" + aj
             }
-            var am = new Q(ak);
-            am.buildScriptTag();
-            am.addScriptTag()
+            var ak = new P(ai);
+            ak.buildScriptTag();
+            ak.addScriptTag()
         }
-        function l(e, al, an) {
-            var ak = e;
-            if (al) {
-                window[al] = an
+        function k(ah, aj, al) {
+            var ai = ah;
+            if (aj) {
+                window[aj] = al
             }
-            ak += "&callback=" + al;
-            var am = new Q(ak);
-            am.buildScriptTag();
-            am.addScriptTag();
+            ai += "&callback=" + aj;
+            var ak = new P(ai);
+            ak.buildScriptTag();
+            ak.addScriptTag();
             return this
         }
-        function Z(ak, e) {
-            return ak.getAttribute(e)
+        function Y(ai, ah) {
+            return ai.getAttribute(ah)
         }
-        function v(al, an, ak, am) {
+        function u(aj, al, ai, ak) {
             if (arguments.length > 2) {
-                var e = new Date(new Date().getTime() + ak * 3600000);
-                document.cookie = al + "=" + encodeURIComponent(an) + "; domain=xunlei.com; expires=" + e.toGMTString()
+                var ah = new Date(new Date().getTime() + ai * 3600000);
+                document.cookie = aj + "=" + encodeURIComponent(al) + "; path=/; domain=xunlei.com; expires=" + ah.toGMTString()
             } else {
-                document.cookie = al + "=" + encodeURIComponent(an) + "; path=/; domain=xunlei.com"
+                document.cookie = aj + "=" + encodeURIComponent(al) + "; path=/; domain=xunlei.com"
             }
         }
-        function ab(al, ak) {
-            ak = ad(ak) ? location.href: ak;
-            var e = ak.match(new RegExp("[#|?]([^#]*)[#|?]?"));
-            ak = "&" + (X(e) ? "": e[1]);
-            e = ak.match(new RegExp("&" + al + "=", "i"));
-            return X(e) ? undefined: ak.substr(e.index + 1).split("&")[0].split("=")[1]
+        function aa(aj, ai) {
+            ai = ac(ai) ? location.href: ai;
+            var ah = ai.match(new RegExp("[#|?]([^#]*)[#|?]?"));
+            ai = "&" + (W(ah) ? "": ah[1]);
+            ah = ai.match(new RegExp("&" + aj + "=", "i"));
+            return W(ah) ? undefined: ai.substr(ah.index + 1).split("&")[0].split("=")[1]
         }
-        var H = false;
-        try {
-            if (ab("from")) {
-                var H = (ab("from").indexOf("xl_scene") != -1) ? true: false
-            } else {
-                H = false
-            }
-        } catch(aj) {
-            H = false
-        }
-        try {
-            if (window.G_PAGE && window.G_PAGE == "vodplay" && H) {
-                H = true
-            } else {
-                H = false
-            }
-        } catch(aj) {
-            H = false
-        }
-        var z = 6;
-        var ae = (ab("flux") == 1) ? true: false;
         window.isClientVodScene = false;
-        if (H && z == 0 && !ae) {
+        var G = aa("tryplay");
+        if (G == 1) {
             window.isClientVodScene = true
         }
-        var U = C;
-        var y = U.getAttribute("from");
-        y = y || "unknown";
-        var Y = U.getElementsByTagName("a");
-        if (Y.length == 0) {
-            Y = U.getElementsByTagName("span");
-            if (Y.length == 0) {
+        var z = aa("debug");
+        if (z == 1) {
+            a = true
+        }
+        var T = B;
+        var x = T.getAttribute("from");
+        x = x || "unknown";
+        var X = T.getElementsByTagName("a");
+        if (X.length == 0) {
+            X = T.getElementsByTagName("span");
+            if (X.length == 0) {
                 return
             }
-            var g = Y[0];
-            var j = b(Z(g, "url"))
+            var f = X[0];
+            var i = b(Y(f, "url"))
         } else {
-            var g = Y[0];
-            var j = b(g.getAttribute("href"))
+            var f = X[0];
+            var i = b(f.getAttribute("href"))
         }
-        var J = Z(g, "filesize");
-        var I = Z(g, "gcid");
-        var r = Z(g, "cid");
-        var P = Z(g, "title");
-        var V = Z(g, "onsuccess");
-        var ah = Z(g, "playother");
-        var t = Z(g, "onfail");
-        if (!U.style.height) {
-            U.style.height = "446px"
+        var I = Y(f, "filesize");
+        var H = Y(f, "gcid");
+        var q = Y(f, "cid");
+        var O = Y(f, "title");
+        var U = Y(f, "onsuccess");
+        var af = Y(f, "playother");
+        var s = Y(f, "onfail");
+        if (!T.style.height) {
+            T.style.height = "446px"
         }
-        if (!U.style.width) {
-            U.style.width = "684px"
+        if (!T.style.width) {
+            T.style.width = "684px"
         }
-        U.style.overflow = "hidden";
-        var R = Z(g, "share_url");
-        R = R ? h(R) : h(j);
-        var ag = Z(g, "autoplay");
-        if (!ag || ag != "true") {
-            ag = false
+        T.style.overflow = "hidden";
+        var Q = Y(f, "share_url");
+        Q = Q ? g(Q) : g(i);
+        var ae = Y(f, "autoplay");
+        if (!ae || ae != "true") {
+            ae = false
         } else {
-            ag = true
+            ae = true
         }
         var d = {
             enableShare: true,
@@ -190,84 +173,84 @@
             enableTopBar: true,
             enableFeedback: true
         };
-        var B = Z(g, "enable_panel");
-        if (B && B == "false") {
+        var A = Y(f, "enable_panel");
+        if (A && A == "false") {
             d.enableShare = false
         }
-        var N = Z(g, "enable_download");
-        if (N && N == "false") {
+        var M = Y(f, "enable_download");
+        if (M && M == "false") {
             d.enableDownload = false
         }
-        var F = Z(g, "enable_caption");
-        if (F && F == "false") {
+        var E = Y(f, "enable_caption");
+        if (E && E == "false") {
             d.enableCaption = false
         }
-        var m = Z(g, "enable_filelist");
-        if (m && m == "false") {
+        var l = Y(f, "enable_filelist");
+        if (l && l == "false") {
             d.enableFileList = false
         }
-        var ac = Z(g, "enable_setting");
-        if (ac && ac == "false") {
+        var ab = Y(f, "enable_setting");
+        if (ab && ab == "false") {
             d.enableSet = false
         }
-        var E = Z(g, "enable_openwindow");
-        if (E && E == "false") {
+        var D = Y(f, "enable_openwindow");
+        if (D && D == "false") {
             d.enableOpenWindow = false
         }
-        var n = Z(g, "enable_topbar");
-        if (n && n == "false") {
+        var m = Y(f, "enable_topbar");
+        if (m && m == "false") {
             d.enableTopBar = false
         }
-        var A = Z(g, "enable_kkva");
-        if (A && A == "true") {
-            A = true
+        var y = Y(f, "enable_kkva");
+        if (y && y == "true") {
+            y = true
         } else {
-            A = false
+            y = false
         }
-        var S = parseInt(Z(g, "start")) || 0;
-        var p = Z(g, "format");
-        var W;
-        var s = false,
-        M = /xyz/.test(function() {
+        var R = parseInt(Y(f, "start")) || 0;
+        var o = Y(f, "format");
+        var V;
+        var r = false,
+        L = /xyz/.test(function() {
             xyz
         }) ? /\b_super\b/: /.*/;
-        var f = function() {};
-        f.extend = function(an) {
-            var am = this.prototype;
-            s = true;
-            var al = new this();
-            s = false;
-            for (var ak in an) {
-                al[ak] = typeof an[ak] == "function" && typeof am[ak] == "function" && M.test(an[ak]) ? (function(ao, ap) {
+        var e = function() {};
+        e.extend = function(al) {
+            var ak = this.prototype;
+            r = true;
+            var aj = new this();
+            r = false;
+            for (var ai in al) {
+                aj[ai] = typeof al[ai] == "function" && typeof ak[ai] == "function" && L.test(al[ai]) ? (function(am, an) {
                     return function() {
-                        var ar = this._super;
-                        this._super = am[ao];
-                        var aq = ap.apply(this, arguments);
-                        this._super = ar;
-                        return aq
+                        var ap = this._super;
+                        this._super = ak[am];
+                        var ao = an.apply(this, arguments);
+                        this._super = ap;
+                        return ao
                     }
-                })(ak, an[ak]) : an[ak]
+                })(ai, al[ai]) : al[ai]
             }
-            function e() {
-                if (!s && this.init) {
+            function ah() {
+                if (!r && this.init) {
                     this.init.apply(this, arguments)
                 }
             }
-            e.prototype = al;
-            e.constructor = e;
-            e.extend = arguments.callee;
-            return e
+            ah.prototype = aj;
+            ah.constructor = ah;
+            ah.extend = arguments.callee;
+            return ah
         };
-        var w;
+        var v;
         window.XL_CLOUD_FX_INSTANCE = {
-            Class: f,
+            Class: e,
             lastFormat: "p",
             cacheData: [],
             curPlay: null,
             curInfohash: "",
             curDlUrl: "",
-            curUrl: h(j),
-            curName: h(P),
+            curUrl: g(i),
+            curName: g(O),
             originalPlay: null,
             fileList: null,
             captionList: [],
@@ -280,80 +263,80 @@
             platform: "webpage",
             playPosition: -1,
             userType: 1,
-            init: function(ak) {
-                w = ak;
-                var am = this;
-                am.platform = am.getPlatForm();
-                if (!am.validUrl(am.curUrl)) {
-                    am.error("您的点播url非法，无法播放！");
+            init: function(ah) {
+                v = ah;
+                var aj = this;
+                aj.platform = aj.getPlatForm();
+                if (!aj.validUrl(aj.curUrl)) {
+                    aj.error("您的点播url非法，无法播放！");
                     return false
                 }
-                var ap = U.getAttribute("id");
-                if (!ap) {
-                    ap = "XL_CLOUD_PLAY_BOX";
-                    U.setAttribute("id", ap)
+                var am = T.getAttribute("id");
+                if (!am) {
+                    am = "XL_CLOUD_PLAY_BOX";
+                    T.setAttribute("id", am)
                 }
-                U.style.backgroundColor = "#000";
-                var an = ["61.147.76.6", "61.147.76.6", "222.141.53.5", "222.141.53.5"];
-                goip = an[0];
-                K(aa + "interface/getip?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryIpBack", 
-                function(aq) {
+                T.style.backgroundColor = "#000";
+                var ak = ["61.147.76.6", "61.147.76.6", "222.141.53.5", "222.141.53.5"];
+                goip = ak[0];
+                J(Z + "interface/getip?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryIpBack", 
+                function(an) {
                     try {
-                        goip = an[aq]
-                    } catch(ar) {
+                        goip = ak[an]
+                    } catch(ao) {
                         try {
-                            goip = an[aq.result]
-                        } catch(ar) {
-                            goip = an[0]
+                            goip = ak[an.result]
+                        } catch(ao) {
+                            goip = ak[0]
                         }
                     }
                 });
-                am.isVod = (document.location.host == an[0] || document.location.host == an[2]);
-                am.isXlpan = /.*((xlpan)|(f\.xunlei\.com)).*/.exec(document.location.host);
+                aj.isVod = (document.location.host == ak[0] || document.location.host == ak[2]);
+                aj.isXlpan = /.*((xlpan)|(f\.xunlei\.com)).*/.exec(document.location.host);
                 try {
-                    am.isThunderBox = window.external.IsInXLpanClient()
-                } catch(ao) {
-                    am.isThunderBox = false
+                    aj.isThunderBox = window.external.IsInXLpanClient()
+                } catch(al) {
+                    aj.isThunderBox = false
                 }
-                var al = am.genBtUrl(am.curUrl);
-                if (al) {
-                    am.type = "bt";
-                    R = al
+                var ai = aj.genBtUrl(aj.curUrl);
+                if (ai) {
+                    aj.type = "bt";
+                    Q = ai
                 }
-                am.uCheck();
-                window.onunload = function(aq) {
-                    am.reportPlayPos();
-                    if (am.curPlay) {
+                aj.uCheck();
+                window.onunload = function(an) {
+                    aj.reportPlayPos();
+                    if (aj.curPlay) {
                         try {
-                            var av = G_PLAYER_INSTANCE.getTimePlayed();
-                            var ar = av.playedtime;
-                            var az = av.playedbyte;
-                            var aw = av.downloadbyte
-                        } catch(ax) {
-                            var ar = 0;
-                            var az = 0;
-                            var aw = 0
+                            var ar = G_PLAYER_INSTANCE.getTimePlayed();
+                            var ao = ar.playedtime;
+                            var aw = ar.playedbyte;
+                            var at = ar.downloadbyte
+                        } catch(au) {
+                            var ao = 0;
+                            var aw = 0;
+                            var at = 0
                         }
                         try {
-                            var aC = G_PLAYER_INSTANCE.getPlayPosition()
-                        } catch(ax) {
-                            var aC = 0
+                            var az = G_PLAYER_INSTANCE.getPlayPosition()
+                        } catch(au) {
+                            var az = 0
                         }
-                        var ay = am.curPlay.src_info;
-                        if (ay) {
-                            var at = ay.gcid || ""
+                        var av = aj.curPlay.src_info;
+                        if (av) {
+                            var ap = av.gcid || ""
                         } else {
-                            var at = ""
+                            var ap = ""
                         }
-                        var aB = am.$PU("g", am.curDlUrl) || "";
-                        var aA = am.curPlay.duration / 1000000 || 0;
-                        var au = new Image();
-                        au.src = "http://i.vod.xunlei.com/stat/s.gif?f=playtime&p=XCVP&totaltime=" + aA + "&du=" + ar + "&by=" + az + "&downby=" + aw + "&t=" + aC + "&gcid=" + aB + "&ygcid=" + at + "&u=" + am.user.u + "&v=" + am.user.v + "&from=" + y + "&d=" + L
+                        var ay = aj.$PU("g", aj.curDlUrl) || "";
+                        var ax = aj.curPlay.duration / 1000000 || 0;
+                        var aq = new Image();
+                        aq.src = "http://i.vod.xunlei.com/stat/s.gif?f=playtime&p=XCVP&totaltime=" + ax + "&du=" + ao + "&by=" + aw + "&downby=" + at + "&t=" + az + "&gcid=" + ay + "&ygcid=" + ap + "&u=" + aj.user.u + "&v=" + aj.user.v + "&from=" + x + "&d=" + K
                     }
-                    am.close()
+                    aj.close()
                 };
                 setTimeout(function() {
-                    am.stat({
+                    aj.stat({
                         p: "XCVP",
                         f: "pv"
                     })
@@ -361,236 +344,236 @@
                 25)
             },
             uVipinfo: function() {
-                l(aa + "interface/getuservipinfo?t=" + L, "XL_CLOUD_FX_INSTANCEqueryVipinfoBack", 
-                function(al) {
-                    if (al.result == "0" && al.vipinfo.payid) {
-                        var ap = al.vipinfo;
-                        if (ap.payid - 1000 > 0) {
-                            var ak = ap.expiredate.split("-");
-                            var e = al.svrtime.split("-");
-                            var an = ak[0] - e[0];
-                            var aq = ak[1] - e[1];
-                            var am = ak[2] - e[2];
-                            var ao = "";
-                            if (am < 0) {
-                                var ar = new Date();
-                                ar = new Date(ar.getFullYear(), ar.getMonth() + 3, 0);
-                                if (aq > 0) {
-                                    aq = aq - 1
+                k(Z + "interface/getuservipinfo?t=" + K, "XL_CLOUD_FX_INSTANCEqueryVipinfoBack", 
+                function(aj) {
+                    if (aj.result == "0" && aj.vipinfo.payid) {
+                        var an = aj.vipinfo;
+                        if (an.payid - 1000 > 0) {
+                            var ai = an.expiredate.split("-");
+                            var ah = aj.svrtime.split("-");
+                            var al = ai[0] - ah[0];
+                            var ao = ai[1] - ah[1];
+                            var ak = ai[2] - ah[2];
+                            var am = "";
+                            if (ak < 0) {
+                                var ap = new Date();
+                                ap = new Date(ap.getFullYear(), ap.getMonth() + 3, 0);
+                                if (ao > 0) {
+                                    ao = ao - 1
                                 } else {
-                                    an -= 1;
-                                    aq = 11
+                                    al -= 1;
+                                    ao = 11
                                 }
-                                am = ar.getDate() + am
+                                ak = ap.getDate() + ak
                             }
-                            if (an > 0) {
-                                ao += an + "年"
+                            if (al > 0) {
+                                am += al + "年"
                             }
-                            if (aq > 0) {
-                                ao += aq + "月"
+                            if (ao > 0) {
+                                am += ao + "月"
                             }
-                            if (am > 8 || an > 0 || aq > 0) {
+                            if (ak > 8 || al > 0 || ao > 0) {
                                 return false
                             }
-                            ao += am + "天";
-                            ao = "您的体验会员将在" + ao + "后到期，建议您开通正式会员";
-                            G_PLAYER_INSTANCE.setNoticeMsg(ao, 1500)
+                            am += ak + "天";
+                            am = "您的体验会员将在" + am + "后到期，建议您开通正式会员";
+                            G_PLAYER_INSTANCE.setNoticeMsg(am, 1500)
                         }
                     }
                 })
             },
             uCheck: function() {
-                var e = this;
-                if (e.isXlpan || e.isThunderBox || e.isVod || isClientVodScene) {
-                    if (!e.isVod) {
+                var ah = this;
+                if (ah.isXlpan || ah.isThunderBox || ah.isVod || isClientVodScene) {
+                    if (!ah.isVod) {
                         d.enableOpenWindow = false
                     }
-                    e.user.u = k("userid");
-                    e.user.v = "6";
-                    e.user.s = k("sessionid");
-                    e.query(e.curUrl, e.curName, I, r, J);
+                    ah.user.u = j("userid");
+                    ah.user.v = 6;
+                    ah.user.s = j("sessionid");
+                    ah.query(ah.curUrl, ah.curName, H, q, I);
                     return true
                 }
-                var ak = null;
+                var ai = null;
                 isTimeout = true;
-                K(aa + "interface/getXlCookie?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryXlCookieBack", 
-                function(al) {
-                    if (al && al.sessionid && al.userid) {
-                        e.user.u = al.userid;
-                        e.user.v = "6";
-                        e.user.s = al.sessionid;
-                        if (!k("userid") && !k("isvip") && !k("sessionid")) {
-                            v("userid");
-                            v("isvip");
-                            v("sessionid")
+                J(Z + "interface/getXlCookie?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryXlCookieBack", 
+                function(aj) {
+                    if (aj && aj.sessionid && aj.userid) {
+                        ah.user.u = aj.userid;
+                        ah.user.v = 6;
+                        ah.user.s = aj.sessionid;
+                        if (!j("userid") && !j("isvip") && !j("sessionid")) {
+                            u("userid");
+                            u("isvip");
+                            u("sessionid")
                         }
-                        e.query(e.curUrl, e.curName, I, r, J)
+                        ah.query(ah.curUrl, ah.curName, H, q, I)
                     } else {
-                        e.query(e.curUrl, e.curName, I, r, J)
+                        ah.query(ah.curUrl, ah.curName, H, q, I)
                     }
                     isTimeout = false;
-                    clearTimeout(ak)
+                    clearTimeout(ai)
                 });
-                ak = setTimeout(function() {
+                ai = setTimeout(function() {
                     if (isTimeout) {
-                        e.error("暂时无法验证您的登录状态，请稍后<a style='color:#1874CA;' href='javascript:;' onclick='XL_CLOUD_FX_INSTANCE.uCheck();return false;'>重试</a>")
+                        ah.error("暂时无法验证您的登录状态，请稍后<a style='color:#1874CA;' href='javascript:;' onclick='XL_CLOUD_FX_INSTANCE.uCheck();return false;'>重试</a>")
                     }
                     isTimeout = false;
-                    clearTimeout(ak)
+                    clearTimeout(ai)
                 },
-                D)
+                C)
             },
             uUpdate: function() {
-                var e = this;
-                K(aa + "interface/getXlCookie?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryXlCookieBack", 
-                function(ak) {
-                    if (ak && ak.sessionid && ak.isvip && ak.userid) {
-                        e.user.u = ak.userid;
-                        e.user.v = "6";
-                        e.user.s = ak.sessionid;
-                        if (!k("userid") && !k("isvip") && !k("sessionid")) {
-                            v("userid");
-                            v("isvip");
-                            v("sessionid")
+                var ah = this;
+                J(Z + "interface/getXlCookie?t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryXlCookieBack", 
+                function(ai) {
+                    if (ai && ai.sessionid && ai.isvip && ai.userid) {
+                        ah.user.u = ai.userid;
+                        ah.user.v = 6;
+                        ah.user.s = ai.sessionid;
+                        if (!j("userid") && !j("isvip") && !j("sessionid")) {
+                            u("userid");
+                            u("isvip");
+                            u("sessionid")
                         }
                     }
                 })
             },
             reportPlayPos: function() {
-                var am = this;
-                if (am.curPlay && am.curPlay.ret == 0) {
-                    var al = "";
-                    if (am.type == "bt" && am.fileList && am.fileList.main_task_url_hash) {
-                        al = am.fileList.main_task_url_hash
+                var aj = this;
+                if (aj.curPlay && aj.curPlay.ret == 0) {
+                    var ai = "";
+                    if (aj.type == "bt" && aj.fileList && aj.fileList.main_task_url_hash) {
+                        ai = aj.fileList.main_task_url_hash
                     } else {
-                        if (am.curPlay && am.curPlay.url_hash) {
-                            al = am.curPlay.url_hash
+                        if (aj.curPlay && aj.curPlay.url_hash) {
+                            ai = aj.curPlay.url_hash
                         } else {
                             return false
                         }
                     }
                     try {
-                        var ao = 0;
-                        if (am.playPosition != -1) {
-                            ao = am.playPosition
+                        var al = 0;
+                        if (aj.playPosition != -1) {
+                            al = aj.playPosition
                         } else {
-                            ao = G_PLAYER_INSTANCE.getPlayPosition();
-                            ao = Math.ceil(ao)
+                            al = G_PLAYER_INSTANCE.getPlayPosition();
+                            al = Math.ceil(al)
                         }
-                        if (!ao || ao < 0) {
-                            ao = 0
+                        if (!al || al < 0) {
+                            al = 0
                         }
-                        al = al + "_" + ao
-                    } catch(an) {
+                        ai = ai + "_" + al
+                    } catch(ak) {
                         return false
                     }
-                    var ak = 0;
-                    if (am.type == "bt") {
-                        al = al + "_1";
-                        ak = am.curUrl.substr(parseInt(am.curUrl.lastIndexOf("/")) + 1, am.curUrl.length)
+                    var ah = 0;
+                    if (aj.type == "bt") {
+                        ai = ai + "_1";
+                        ah = aj.curUrl.substr(parseInt(aj.curUrl.lastIndexOf("/")) + 1, aj.curUrl.length)
                     } else {
-                        al = al + "_0"
+                        ai = ai + "_0"
                     }
                     try {
-                        K(G + "req_report_play_pos?userid=" + am.user.u + "&report_data=" + al + "_" + ak + "&t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEreportPosBack", 
-                        function(e) {
+                        J(F + "req_report_play_pos?userid=" + aj.user.u + "&report_data=" + ai + "_" + ah + "&t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEreportPosBack", 
+                        function(am) {
                             return false
                         })
-                    } catch(an) {}
+                    } catch(ak) {}
                 }
             },
             initEvent: function() {
-                var e = this;
+                var ah = this;
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onGetFormats", 
-                function(al, ak, am, an) {});
+                function(aj, ai, ak, al) {});
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onSetFormats", 
-                function(al, ak, am, ap, an, ao) {
-                    e.setFormats(am, ap, an, ao)
+                function(aj, ai, ak, an, al, am) {
+                    ah.setFormats(ak, an, al, am)
                 });
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onErrorStat", 
-                function(al, ak, am) {
-                    if (e.kkvaUsed) {
+                function(aj, ai, ak) {
+                    if (ah.kkvaUsed) {
                         try {
-                            e.close();
+                            ah.close();
                             G_PLAYER_INSTANCE.setNoticeMsg("迅雷播放加速服务已经退出，您将无法继续观看视频,请刷新页面重试", 5000)
-                        } catch(an) {}
-                        e.kkvaUsed = false
+                        } catch(al) {}
+                        ah.kkvaUsed = false
                     }
                 });
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onErrorExit", 
-                function(al, ak, am, an) {
-                    e.stat({
+                function(aj, ai, ak, al) {
+                    ah.stat({
                         f: "playerror",
-                        e: am,
-                        gcid: e.$PU("g", e.curDlUrl)
+                        e: ak,
+                        gcid: ah.$PU("g", ah.curDlUrl)
                     })
                 });
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onplaying", 
                 function() {
-                    if (e.kkvaValid) {
-                        e.kkvaUsed = true;
+                    if (ah.kkvaValid) {
+                        ah.kkvaUsed = true;
                         try {
                             G_PLAYER_INSTANCE.setNoticeMsg("<a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://dl.xunlei.com/xmp.html')\">迅雷播放加速服务中...</a>", 30)
-                        } catch(ak) {}
-                        e.kkvaValid = false
+                        } catch(ai) {}
+                        ah.kkvaValid = false
                     }
-                    e.stats_buff()
+                    ah.stats_buff()
                 });
                 G_PLAYER_INSTANCE.attachEvent(G_PLAYER_INSTANCE, "onStop", 
                 function() {
-                    var ak = G_PLAYER_INSTANCE.getPlayPosition();
-                    ak = Math.ceil(ak);
-                    e.playPosition = ak
+                    var ai = G_PLAYER_INSTANCE.getPlayPosition();
+                    ai = Math.ceil(ai);
+                    ah.playPosition = ai
                 })
             },
             initPlayerEvent: function() {
                 if (c) {
                     return true
                 }
-                var e = this;
+                var ah = this;
                 G_PLAYER_INIT.attachEvent(G_PLAYER_INIT, "onLoadFlashError", 
                 function() {
-                    e.error("播放器加载异常，建议您关闭<br/>耗带宽的软件后重试，或联系您的网络运营商。");
-                    e.stat({
+                    ah.error("播放器加载异常，建议您关闭<br/>耗带宽的软件后重试，或联系您的网络运营商。");
+                    ah.stat({
                         f: "loadflasherror",
                         ua: window.navigator.userAgent
                     })
                 });
                 G_PLAYER_INIT.attachEvent(G_PLAYER_INIT, "onFlashError", 
                 function() {
-                    e.error('检测到您没有安装Flash插件，您可以点这里 <a style=\'color:#1874CA;text-decoration: none;\' href="http://get.adobe.com/cn/flashplayer/" target="_blank">安装插件</a>');
-                    e.stat({
+                    ah.error('检测到您没有安装Flash插件，您可以点这里 <a style=\'color:#1874CA;text-decoration: none;\' href="http://get.adobe.com/cn/flashplayer/" target="_blank">安装插件</a>');
+                    ah.stat({
                         f: "noflash"
                     })
                 })
             },
-            stat: function(ao) {
-                var al = this;
-                var ao = ao || {};
-                var an = [];
-                ao.p = "XCVP";
-                if (typeof ao.u == "undefined") {
-                    ao.u = al.user.u || 0
+            stat: function(al) {
+                var ai = this;
+                var al = al || {};
+                var ak = [];
+                al.p = "XCVP";
+                if (typeof al.u == "undefined") {
+                    al.u = ai.user.u || 0
                 }
-                if (typeof ao.v == "undefined") {
-                    ao.v = al.user.v || 0
+                if (typeof al.v == "undefined") {
+                    al.v = ai.user.v || 0
                 }
-                if (typeof ao.from == "undefined") {
-                    ao.from = y || "XCVP"
+                if (typeof al.from == "undefined") {
+                    al.from = x || "XCVP"
                 }
-                if (typeof ao.d == "undefined") {
-                    ao.d = L
+                if (typeof al.d == "undefined") {
+                    al.d = K
                 }
-                for (var ak in ao) {
-                    an.push(ak + "=" + encodeURIComponent(ao[ak]))
+                for (var ah in al) {
+                    ak.push(ah + "=" + encodeURIComponent(al[ah]))
                 }
                 try {
                     setTimeout(function() {
-                        var e = new Image(0, 0);
-                        e.src = G + "stat/s.gif?" + an.join("&")
+                        var am = new Image(0, 0);
+                        am.src = F + "stat/s.gif?" + ak.join("&")
                     },
                     5)
-                } catch(am) {}
+                } catch(aj) {}
             },
             stats_buff_flag: false,
             stats_buff: function() {
@@ -598,212 +581,223 @@
                     this.uVipinfo()
                 }
             },
-            query: function(ak, e, at, ap, au, am) {
-                var an = this;
-                an.getBtFileLastPos();
-                var ar,
-                aq;
-                if (e) {
-                    aq = "url=" + encodeURIComponent(ak) + "&video_name=" + encodeURIComponent(e) + "&platform=" + (c ? "1": "0") + "&userid=" + an.user.u + "&vip=" + an.user.v + "&sessionid=" + an.user.s
+            query: function(ai, ah, ar, ao, at, al) {
+                var am = this;
+                am.getBtFileLastPos();
+                var aq,
+                ap;
+                ai = b(ai);
+                if (ah) {
+                    ap = "url=" + encodeURIComponent(ai) + "&video_name=" + encodeURIComponent(ah) + "&platform=" + (c ? "1": "0")
                 } else {
-                    aq = "url=" + encodeURIComponent(ak) + "&platform=" + (c ? "1": "0") + "&userid=" + an.user.u + "&vip=" + an.user.v + "&sessionid=" + an.user.s
+                    ap = "url=" + encodeURIComponent(ai) + "&platform=" + (c ? "1": "0")
                 }
-                if (at && ap && au) {
-                    aq = aq + "&gcid=" + at + "&cid=" + ap + "&filesize=" + au
+                if (ar && ao && at) {
+                    ap = ap + "&gcid=" + ar + "&cid=" + ao + "&filesize=" + at
                 }
-                ar = "http://127.0.0.1:1218/chydbreq_get_method_vod?" + aq;
+                aq = "http://127.0.0.1:1218/chydbreq_get_method_vod?" + ap;
                 if (isClientVodScene) {
                     d.enableTopBar = false;
                     d.enableOpenWindow = false;
                     d.enableFileList = false;
-                    if (! (at && ap && au) && at) {
-                        aq = aq + "&gcid=" + at
+                    if (! (ar && ao && at) && ar) {
+                        ap = ap + "&gcid=" + ar
                     }
-                    ar = G + "req_try_vod?" + aq + "&peerid=" + an.$PU("peerid") + "&playallow=" + an.$PU("playallow")
+                    aq = F + "req_try_vod?" + ap;
+                    var ak = am.$PU("peerid");
+                    var au = am.$PU("playallow");
+                    if (ak) {
+                        aq += "&peerid=" + ak
+                    }
+                    if (au) {
+                        aq += "&playallow=" + au
+                    }
                 }
-                ar = ar + "&cache=" + new Date().getTime() + "&from=" + y;
-                K(ar, "XL_CLOUD_FX_INSTANCEqueryBack", 
+                aq = aq + "&cache=" + new Date().getTime() + "&from=" + x;
+                J(aq, "XL_CLOUD_FX_INSTANCEqueryBack", 
                 function(aw) {
                     if (aw.resp.vod_permit && typeof(aw.resp.vod_permit.ret) != "undefined") {
-                        an.userType = 1
+                        am.userType = 1
                     } else {
-                        an.userType = 1
+                        am.userType = 1
                     }
-                    clearTimeout(al);
-                    ao = false;
+                    clearTimeout(aj);
+                    an = false;
                     var av = setTimeout(function() {
-                        if (am) {
-                            an.queryOtherBack(aw.resp)
+                        if (al) {
+                            am.queryOtherBack(aw.resp)
                         } else {
-                            an.queryBack(aw.resp)
+                            am.queryBack(aw.resp)
                         }
                         clearTimeout(av)
                     },
                     25)
                 });
-                var ao = true;
-                var al = setTimeout(function() {
-                    if (am) {
+                var an = true;
+                var aj = setTimeout(function() {
+                    if (al) {
                         G_PLAYER_INSTANCE.playOtherFail(false)
                     } else {
-                        if (ao) {
-                            an.error("服务器正忙，请稍后再试")
+                        if (an) {
+                            am.error("服务器正忙，请稍后再试")
                         }
                     }
-                    clearTimeout(al)
+                    clearTimeout(aj)
                 },
-                D)
+                C)
             },
-            genErrorMsg: function(at, av) {
-                var ar = this;
-                var aq = "";
-                var ap = "";
-                var ak = ar.isXlpan || ar.isThunderBox;
-                var ay = ar.$PU("list") == "yincang" ? ("#list=" + ar.$PU("list") + "&p=" + ar.$PU("p")) : "#list=recent";
-                var al = "<a href='http://vod.xunlei.com/list.html" + ay + "' target='_blank' style='color:#1874CA;'>查看进度</a>";
-                if (ar.platform == "client") {
-                    al = "<a href='http://vod.xunlei.com/client/clist.html" + ay + "' target='_self' style='color:#1874CA;'>查看进度</a>"
+            genErrorMsg: function(aq, at) {
+                var ap = this;
+                var ao = "";
+                var an = "";
+                var ai = ap.isXlpan || ap.isThunderBox;
+                var aw = ap.$PU("list") == "yincang" ? ("#list=" + ap.$PU("list") + "&p=" + ap.$PU("p")) : "#list=recent";
+                var aj = "<a href='http://vod.xunlei.com/list.html" + aw + "' target='_blank' style='color:#1874CA;'>查看进度</a>";
+                if (ap.platform == "client") {
+                    aj = "<a href='http://vod.xunlei.com/client/clist.html" + aw + "' target='_self' style='color:#1874CA;'>查看进度</a>"
                 }
-                var ao = "<a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://helpbbs.xunlei.com/read.php?tid=578009')\" style='color:#1874CA;'>反馈问题</a>";
-                var am = {
+                var am = "<a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://helpbbs.xunlei.com/read.php?tid=578009')\" style='color:#1874CA;'>反馈问题</a>";
+                var ak = {
                     illegalUrl: "该视频下载链接有误，无法播放",
                     notVideo: "该下载链接不含视频,无法播放",
                     leftTime: "该资源转码还需大约",
-                    unkonwTime4Xlpan: "该资源转码需要较长时间，" + ao,
+                    unkonwTime4Xlpan: "该资源转码需要较长时间，" + am,
                     unkonwTime4Player: "该资源转码需要较长时间",
-                    unkonwTime: "该资源转码需要较长时间，" + al,
-                    downloading4Xlpan: "该资源云端下载与转码需要较长时间，" + ao,
+                    unkonwTime: "该资源转码需要较长时间，" + aj,
+                    downloading4Xlpan: "该资源云端下载与转码需要较长时间，" + am,
                     downloading4Player: "该资源云端下载与转码需要较长时间",
-                    downloading: "该资源云端下载与转码需要较长时间，" + al,
+                    downloading: "该资源云端下载与转码需要较长时间，" + aj,
                     transFail: "该文件转码失败，请<span style='color:#1874CA;cursor:pointer;' onclick='top.document.location.reload()'>重试</span>",
                     serverError: "服务器正忙，请稍后再试",
                     sessionidExpired: "检测到您未登录或登录异常，请重新登录后从列表页点播",
                     IPTooMuchUsed: "您的帐号因登录IP过多已被限制为不能播放，请于1天后重试，建议您尽快修改密码",
                     noPermit: "点播权限存在问题"
                 };
-                if (at.ret == 6) {
-                    aq = am.illegalUrl
+                if (aq.ret == 6) {
+                    ao = ak.illegalUrl
                 } else {
-                    if (at.ret == 8) {
-                        aq = am.notVideo
+                    if (aq.ret == 8) {
+                        ao = ak.notVideo
                     } else {
-                        if (at.ret == 11) {
-                            var aw = 1;
-                            if (aw == 3) {
-                                aq = am.IPTooMuchUsed
+                        if (aq.ret == 11) {
+                            var au = 1;
+                            if (au == 3) {
+                                ao = ak.IPTooMuchUsed
                             } else {
-                                if (aw == 4 || aw == 5) {
-                                    aq = am.sessionidExpired
+                                if (au == 4 || au == 5) {
+                                    ao = ak.sessionidExpired
                                 } else {
-                                    if (aw != 0 && aw != 1) {
-                                        aq = am.noPermit
+                                    if (au != 0 && au != 1) {
+                                        ao = ak.noPermit
                                     } else {
-                                        aq = am.serverError
+                                        ao = ak.serverError
                                     }
                                 }
                             }
                         } else {
-                            if (at.ret == 14 || at.ret == 15) {
-                                aq = 15
+                            if (aq.ret == 14 || aq.ret == 15) {
+                                ao = 15
                             } else {
-                                if (typeof at.status != "undefined" && at.status == 2 && at.trans_wait) {
-                                    if (at.trans_wait > 0 && at.trans_wait < 60) {
-                                        ap = at.trans_wait + "秒"
+                                if (typeof aq.status != "undefined" && aq.status == 2 && aq.trans_wait) {
+                                    if (aq.trans_wait > 0 && aq.trans_wait < 60) {
+                                        an = aq.trans_wait + "秒"
                                     } else {
-                                        if (at.trans_wait == -1) {
-                                            if (ak) {
-                                                return am.unkonwTime4Xlpan
+                                        if (aq.trans_wait == -1) {
+                                            if (ai) {
+                                                return ak.unkonwTime4Xlpan
                                             } else {
-                                                if (av) {
-                                                    return am.unkonwTime4Player
+                                                if (at) {
+                                                    return ak.unkonwTime4Player
                                                 } else {
-                                                    return am.unkonwTime
+                                                    return ak.unkonwTime
                                                 }
                                             }
                                         } else {
-                                            if (at.trans_wait == -2) {
-                                                if (ak) {
-                                                    return am.transFail + "，还不能解决" + ao
+                                            if (aq.trans_wait == -2) {
+                                                if (ai) {
+                                                    return ak.transFail + "，还不能解决" + am
                                                 } else {
-                                                    return am.transFail
+                                                    return ak.transFail
                                                 }
                                             } else {
-                                                var e = parseInt(at.trans_wait / 60);
-                                                var ax = 0;
-                                                var an = e;
-                                                var au = 0;
-                                                if (e >= 60) {
-                                                    ax = parseInt(e / 60);
-                                                    an = e - ax * 60;
-                                                    if (ax >= 24) {
-                                                        au = parseInt(ax / 24);
-                                                        ax = ax - au * 24
+                                                var ah = parseInt(aq.trans_wait / 60);
+                                                var av = 0;
+                                                var al = ah;
+                                                var ar = 0;
+                                                if (ah >= 60) {
+                                                    av = parseInt(ah / 60);
+                                                    al = ah - av * 60;
+                                                    if (av >= 24) {
+                                                        ar = parseInt(av / 24);
+                                                        av = av - ar * 24
                                                     }
                                                 }
-                                                if (au) {
-                                                    ap += au + "天"
+                                                if (ar) {
+                                                    an += ar + "天"
                                                 }
-                                                if (ax) {
-                                                    ap += ax + "小时"
+                                                if (av) {
+                                                    an += av + "小时"
                                                 }
-                                                if (an) {
-                                                    ap += an + "分钟"
+                                                if (al) {
+                                                    an += al + "分钟"
                                                 }
                                             }
                                         }
                                     }
-                                    if (ak) {
-                                        aq = am.leftTime + ap + "," + ao
+                                    if (ai) {
+                                        ao = ak.leftTime + an + "," + am
                                     } else {
-                                        if (av) {
-                                            aq = am.leftTime + ap
+                                        if (at) {
+                                            ao = ak.leftTime + an
                                         } else {
-                                            aq = am.leftTime + ap + "," + al
+                                            ao = ak.leftTime + an + "," + aj
                                         }
                                     }
                                 } else {
-                                    if (typeof at.status != "undefined" && at.status == 1) {
-                                        if (ak) {
-                                            aq = am.downloading4Xlpan
+                                    if (typeof aq.status != "undefined" && aq.status == 1) {
+                                        if (ai) {
+                                            ao = ak.downloading4Xlpan
                                         } else {
-                                            if (av) {
-                                                aq = am.downloading4Player
+                                            if (at) {
+                                                ao = ak.downloading4Player
                                             } else {
-                                                aq = am.downloading
+                                                ao = ak.downloading
                                             }
                                         }
                                     } else {
-                                        aq = am.serverError
+                                        ao = ak.serverError
                                     }
                                 }
                             }
                         }
                     }
                 }
-                return aq
+                return ao
             },
-            queryBack: function(au) {
-                var ar = this;
-                ar.curPlay = au;
-                ar.initPlayerEvent();
-                var am = ar.getPlatForm();
-                var ap = "platform=" + am;
-                var ao = function() {
-                    w.attachEvent(w, "onload", 
-                    function(ax, e) {
+            queryBack: function(aq) {
+                var ao = this;
+                ao.curPlay = aq;
+                ao.initPlayerEvent();
+                var aj = ao.getPlatForm();
+                var am = {
+                    platform: aj
+                };
+                var al = function() {
+                    v.attachEvent(v, "onload", 
+                    function(av, au) {
                         if (a) {
                             G_PLAYER_INSTANCE.showDebug()
                         }
-                        ar.initEvent();
-                        G_PLAYER_INSTANCE.playOtherFail(false, ar.genErrorMsg(au, 1));
-                        var ay = {
+                        ao.initEvent();
+                        G_PLAYER_INSTANCE.playOtherFail(false, ao.genErrorMsg(aq, 1));
+                        var aw = {
                             description: "请选择字幕文件(*.srt、*.ass)",
                             extension: "*.srt;*.ass",
                             limitSize: 6 * 1024 * 1024,
-                            uploadURL: aa + "interface/upload_file/?cid=" + r,
+                            uploadURL: Z + "interface/upload_file/?cid=" + q,
                             timeOut: "30"
                         };
-                        G_PLAYER_INSTANCE.setCaptionParam(ay);
+                        G_PLAYER_INSTANCE.setCaptionParam(aw);
                         G_PLAYER_INSTANCE.setToolBarEnable({
                             enableShare: false,
                             enableFileList: d.enableFileList,
@@ -814,174 +808,174 @@
                             enableTopBar: d.enableTopBar,
                             enableFeedback: true
                         });
-                        ar.setFeeParam(0);
-                        ar.setShareParam()
+                        ao.setFeeParam(0);
+                        ao.setShareParam()
                     });
-                    var aw = U.getAttribute("id");
-                    w.printObject(aw, false, "100%", "100%", "", ap);
+                    var at = T.getAttribute("id");
+                    v.printObject(at, false, "100%", "100%", "", am);
                     try {
-                        window[V].call()
-                    } catch(av) {}
+                        window[U].call()
+                    } catch(ar) {}
                 };
-                if (typeof au.status == "undefined" || au.status != 0) {
+                if (typeof aq.status == "undefined" || aq.status != 0) {
                     try {
-                        if (isClientVodScene && au.ret == 0) {
-                            var al = "";
-                            al = I;
-                            if (ar.type == "bt") {
-                                al = R
+                        if (isClientVodScene && aq.ret == 0) {
+                            var ai = "";
+                            ai = H;
+                            if (ao.type == "bt") {
+                                ai = Q
                             }
-                            ar.stat({
+                            ao.stat({
                                 f: "trialPlayAtOnceFail",
-                                id: al,
-                                status: au.status,
-                                transWait: au.trans_wait
+                                id: ai,
+                                status: aq.status,
+                                transWait: aq.trans_wait
                             })
                         }
-                    } catch(at) {}
-                    if (isClientVodScene && (au.ret == 14 || au.ret == 15)) {
-                        ao()
+                    } catch(ap) {}
+                    if (isClientVodScene && (aq.ret == 14 || aq.ret == 15)) {
+                        al()
                     } else {
-                        if (au.ret == 11) {
-                            ar.error(ar.genErrorMsg(au))
+                        if (aq.ret == 11) {
+                            ao.error(ao.genErrorMsg(aq))
                         } else {
-                            if (c || ar.type == "url" || ar.fileList == null || ar.fileList.subfile_list.length <= 1) {
-                                ar.error(ar.genErrorMsg(au))
+                            if (c || ao.type == "url" || ao.fileList == null || ao.fileList.subfile_list.length <= 1) {
+                                ao.error(ao.genErrorMsg(aq))
                             } else {
-                                ao()
+                                al()
                             }
                         }
                     }
                 } else {
-                    if (ar.type == "url") {
-                        ar.getLastPos();
-                        ar.fileList = {
-                            userid: ar.user.u,
+                    if (ao.type == "url") {
+                        ao.getLastPos();
+                        ao.fileList = {
+                            userid: ao.user.u,
                             info_hash: "",
                             subfile_list: [{
-                                name: ar.curPlay.src_info.file_name,
+                                name: ao.curPlay.src_info.file_name,
                                 index: -1,
-                                url_hash: ar.curPlay.url_hash
+                                url_hash: ao.curPlay.url_hash
                             }]
                         }
                     }
-                    if (ar.originalPlay == null) {
-                        ar.originalPlay = au
+                    if (ao.originalPlay == null) {
+                        ao.originalPlay = aq
                     }
-                    ar.cacheData = ar.cacheReqData(ar.cacheData, au, ar.curPlay.url_hash);
-                    var an = au.vodinfo_list;
-                    ar.vod_info = an;
-                    w.attachEvent(w, "onload", 
-                    function(av, e) {
+                    ao.cacheData = ao.cacheReqData(ao.cacheData, aq, ao.curPlay.url_hash);
+                    var ak = aq.vodinfo_list;
+                    ao.vod_info = ak;
+                    v.attachEvent(v, "onload", 
+                    function(at, ar) {
                         if (a) {
                             G_PLAYER_INSTANCE.showDebug()
                         }
-                        if (!p) {
-                            p = G_PLAYER_INSTANCE.getDefaultFormat() || "p"
+                        if (!o) {
+                            o = G_PLAYER_INSTANCE.getDefaultFormat() || "p"
                         }
-                        ar.initEvent();
-                        var aw = an.length;
-                        if ((aw == 1 && (p == "g" || p == "c"))) {
-                            p = "p"
+                        ao.initEvent();
+                        var au = ak.length;
+                        if ((au == 1 && (o == "g" || o == "c"))) {
+                            o = "p"
                         } else {
-                            if ((aw == 2 && p == "c")) {
-                                p = "g"
+                            if ((au == 2 && o == "c")) {
+                                o = "g"
                             }
                         }
-                        if (p == "g") {
-                            var ax = an[1].vod_url
+                        if (o == "g") {
+                            var av = ak[1].vod_url
                         } else {
-                            if (p == "c") {
-                                var ax = an[2].vod_url
+                            if (o == "c") {
+                                var av = ak[2].vod_url
                             } else {
-                                var ax = an[0].vod_url
+                                var av = ak[0].vod_url
                             }
                         }
-                        if (!ar.curName) {
-                            ar.curName = h(ar.curPlay.src_info.file_name)
+                        if (!ao.curName) {
+                            ao.curName = g(ao.curPlay.src_info.file_name)
                         }
-                        ar.startPlay(ax, p, ar.lastPos);
-                        ar.getFormats();
+                        ao.startPlay(av, o, ao.lastPos);
+                        ao.getFormats();
                         G_PLAYER_INSTANCE.playOtherFail(true);
-                        ar.getCaption(ar.curPlay.src_info.gcid, ar.curPlay.src_info.cid);
-                        ar.setShareParam();
-                        ar.curName = h(ar.curPlay.src_info.file_name)
+                        ao.getCaption(ao.curPlay.src_info.gcid, ao.curPlay.src_info.cid);
+                        ao.setShareParam();
+                        ao.curName = g(ao.curPlay.src_info.file_name)
                     });
-                    var ak = U.getAttribute("id");
-                    w.printObject(ak, false, "100%", "100%", "", ap);
+                    var ah = T.getAttribute("id");
+                    v.printObject(ah, false, "100%", "100%", "", am);
                     try {
-                        window[V].call()
-                    } catch(at) {}
+                        window[U].call()
+                    } catch(ap) {}
                 }
-                if (ar.curPlay.src_info) {
-                    var aq = ar.curPlay.src_info.gcid
+                if (ao.curPlay.src_info) {
+                    var an = ao.curPlay.src_info.gcid
                 } else {
-                    var aq = ""
+                    var an = ""
                 }
                 try {
-                    ar.stat({
+                    ao.stat({
                         f: "svrresp",
-                        ret: ar.curPlay.ret,
-                        pt: ar.curPlay.status,
-                        gcid: aq
+                        ret: ao.curPlay.ret,
+                        pt: ao.curPlay.status,
+                        gcid: an
                     })
-                } catch(at) {}
+                } catch(ap) {}
             },
-            cacheReqData: function(ak, e, am) {
-                var ak = ak || [];
-                var ao = ak.length;
-                if (ao > 0 && ao < 6) {
-                    var an = [];
-                    for (var al = 0; al < ao; al++) {
-                        if (ak[al].url_hash && ak[al].url_hash != am) {
-                            an.push(ak[al])
+            cacheReqData: function(ai, ah, ak) {
+                var ai = ai || [];
+                var am = ai.length;
+                if (am > 0 && am < 6) {
+                    var al = [];
+                    for (var aj = 0; aj < am; aj++) {
+                        if (ai[aj].url_hash && ai[aj].url_hash != ak) {
+                            al.push(ai[aj])
                         }
                     }
-                    ak = an
+                    ai = al
                 }
-                ak.push(e);
-                if (ak.length == 5) {
-                    ak.shift()
+                ai.push(ah);
+                if (ai.length == 5) {
+                    ai.shift()
                 }
-                return ak
+                return ai
             },
-            startPlay: function(ak, ao, ar, aq) {
-                var am = this;
-                ar = ar || 0;
-                am.lastFormat = ao;
-                am.curDlUrl = ak;
+            startPlay: function(ah, al, ao, an) {
+                var aj = this;
+                ao = ao || 0;
+                aj.lastFormat = al;
+                aj.curDlUrl = ah;
                 if (c) {
-                    G_PLAYER_INSTANCE.setUrl(ak, ar);
+                    G_PLAYER_INSTANCE.setUrl(ah, ao);
                     this.getFormats();
                     return true
                 } else {
-                    var ap = {};
-                    ap.totalByte = 1;
-                    ap.totalTime = parseInt(this.curPlay.duration / 1000000);
-                    var al = ak;
-                    ap.totalByte = parseInt(this.$PU("s", al));
-                    ap.sliceType = 0;
-                    if (ar && ar > 0) {
-                        ap.start = ar
+                    var am = {};
+                    am.totalByte = 1;
+                    am.totalTime = parseInt(this.curPlay.duration / 1000000);
+                    var ai = ah;
+                    am.totalByte = parseInt(this.$PU("s", ai));
+                    am.sliceType = 0;
+                    if (ao && ao > 0) {
+                        am.start = ao
                     }
                     G_PLAYER_INSTANCE.stop();
                     try {
                         G_PLAYER_INSTANCE.close()
-                    } catch(an) {}
+                    } catch(ak) {}
                     G_PLAYER_INSTANCE.setToolBarEnable(d);
-                    am.setFeeParam(1);
-                    ap.format = ao;
-                    if (A) {
+                    aj.setFeeParam(1);
+                    am.format = al;
+                    if (y) {
                         this.enableKKVA()
                     }
-                    G_PLAYER_INSTANCE.flashopen(al, true, false, ag, ap, 0)
+                    G_PLAYER_INSTANCE.flashopen(ai, true, false, ae, am, 0)
                 }
             },
-            playOther: function(ar, am, ao, e, av, au) {
-                var at = this;
-                if (!at.validUrl(am)) {
+            playOther: function(ap, ak, am, ah, at, ar) {
+                var aq = this;
+                if (!aq.validUrl(ak)) {
                     G_PLAYER_INSTANCE.playOtherFail(false, "该视频下载链接有误，无法播放");
-                    at.setFeeParam(0);
+                    aq.setFeeParam(0);
                     G_PLAYER_INSTANCE.setToolBarEnable({
                         enableShare: false,
                         enableFileList: false,
@@ -994,59 +988,59 @@
                     });
                     return false
                 }
-                at.reportPlayPos();
-                am = b(am);
-                R = h(am);
-                at.type = "url";
-                var an = at.genBtUrl(R);
-                if (an) {
-                    at.type = "bt";
-                    R = an
+                aq.reportPlayPos();
+                ak = b(ak);
+                Q = g(ak);
+                aq.type = "url";
+                var al = aq.genBtUrl(Q);
+                if (al) {
+                    aq.type = "bt";
+                    Q = al
                 }
-                ag = true;
-                p = G_PLAYER_INSTANCE.getDefaultFormat() || "p";
-                S = 0;
-                at.captionList = [];
-                at.isFromList = false;
-                at.curUrl = am;
-                if (!ar) {
-                    at.isFromList = true;
-                    at.curName = h(e);
-                    e = "";
-                    if (an == at.genBtUrl(j, "", 1)) {
-                        e = P
+                ae = true;
+                o = G_PLAYER_INSTANCE.getDefaultFormat() || "p";
+                R = 0;
+                aq.captionList = [];
+                aq.isFromList = false;
+                aq.curUrl = ak;
+                if (!ap) {
+                    aq.isFromList = true;
+                    aq.curName = g(ah);
+                    ah = "";
+                    if (al == aq.genBtUrl(i, "", 1)) {
+                        ah = O
                     }
-                    var al = false;
-                    if (at.cacheData) {
-                        var aq = null;
-                        var aw = at.cacheData.length;
-                        for (var ap = 0; ap < aw; ap++) {
-                            if (ao && at.cacheData[ap].url_hash == ao && at.cacheData[ap].status == 0) {
-                                al = true;
-                                aq = at.cacheData[ap];
+                    var aj = false;
+                    if (aq.cacheData) {
+                        var ao = null;
+                        var au = aq.cacheData.length;
+                        for (var an = 0; an < au; an++) {
+                            if (am && aq.cacheData[an].url_hash == am && aq.cacheData[an].status == 0) {
+                                aj = true;
+                                ao = aq.cacheData[an];
                                 break
                             }
                         }
                     }
-                    at.getLastPos()
+                    aq.getLastPos()
                 } else {
-                    at.fileList = null
+                    aq.fileList = null
                 }
-                if (al) {
-                    var ak = setTimeout(function() {
-                        at.queryOtherBack(aq);
-                        clearTimeout(ak)
+                if (aj) {
+                    var ai = setTimeout(function() {
+                        aq.queryOtherBack(ao);
+                        clearTimeout(ai)
                     },
                     30)
                 } else {
-                    at.query(b(am), e, av, au, "", 1)
+                    aq.query(b(ak), ah, at, ar, "", 1)
                 }
             },
-            queryOtherBack: function(an) {
-                var am = this;
-                am.curPlay = an;
-                if (an.status != 0) {
-                    G_PLAYER_INSTANCE.playOtherFail(false, am.genErrorMsg(an, 1));
+            queryOtherBack: function(ak) {
+                var aj = this;
+                aj.curPlay = ak;
+                if (ak.status != 0) {
+                    G_PLAYER_INSTANCE.playOtherFail(false, aj.genErrorMsg(ak, 1));
                     G_PLAYER_INSTANCE.setToolBarEnable({
                         enableShare: false,
                         enableFileList: d.enableFileList,
@@ -1057,131 +1051,131 @@
                         enableTopBar: d.enableTopBar,
                         enableFeedback: true
                     });
-                    if (!am.isFromList) {
-                        if (am.curPlay.src_info) {
-                            am.curName = h(am.curPlay.src_info.file_name)
+                    if (!aj.isFromList) {
+                        if (aj.curPlay.src_info) {
+                            aj.curName = g(aj.curPlay.src_info.file_name)
                         } else {
-                            am.curName = R
+                            aj.curName = Q
                         }
                     }
-                    am.setFeeParam(0)
+                    aj.setFeeParam(0)
                 } else {
-                    if (am.type == "url") {
-                        am.getLastPos()
+                    if (aj.type == "url") {
+                        aj.getLastPos()
                     }
-                    am.cacheData = am.cacheReqData(am.cacheData, an, am.curPlay.url_hash);
-                    var ap = an.vodinfo_list;
-                    am.vod_info = ap;
-                    if (!am.isFromList) {
-                        am.curName = h(am.curPlay.src_info.file_name)
+                    aj.cacheData = aj.cacheReqData(aj.cacheData, ak, aj.curPlay.url_hash);
+                    var am = ak.vodinfo_list;
+                    aj.vod_info = am;
+                    if (!aj.isFromList) {
+                        aj.curName = g(aj.curPlay.src_info.file_name)
                     }
-                    var ak = setTimeout(function() {
-                        var e = ap.length;
-                        if ((e == 1 && (p == "g" || p == "c"))) {
-                            p = "p"
+                    var ah = setTimeout(function() {
+                        var an = am.length;
+                        if ((an == 1 && (o == "g" || o == "c"))) {
+                            o = "p"
                         } else {
-                            if ((e == 2 && p == "c")) {
-                                p = "g"
+                            if ((an == 2 && o == "c")) {
+                                o = "g"
                             }
                         }
-                        if (p == "g") {
-                            var aq = ap[1].vod_url
+                        if (o == "g") {
+                            var ao = am[1].vod_url
                         } else {
-                            if (p == "c") {
-                                var aq = ap[2].vod_url
+                            if (o == "c") {
+                                var ao = am[2].vod_url
                             } else {
-                                var aq = ap[0].vod_url
+                                var ao = am[0].vod_url
                             }
                         }
-                        am.startPlay(aq, p, am.lastPos);
-                        clearTimeout(ak);
-                        am.getFormats()
+                        aj.startPlay(ao, o, aj.lastPos);
+                        clearTimeout(ah);
+                        aj.getFormats()
                     },
                     50);
                     G_PLAYER_INSTANCE.playOtherFail(true);
-                    am.getCaption(an.src_info.gcid, an.src_info.cid);
-                    am.setShareParam()
+                    aj.getCaption(ak.src_info.gcid, ak.src_info.cid);
+                    aj.setShareParam()
                 }
                 try {
-                    window[ah].call()
-                } catch(ao) {}
-                if (an.src_info) {
-                    var al = an.src_info.gcid
+                    window[af].call()
+                } catch(al) {}
+                if (ak.src_info) {
+                    var ai = ak.src_info.gcid
                 } else {
-                    var al = ""
+                    var ai = ""
                 }
                 try {
-                    am.stat({
+                    aj.stat({
                         f: "svrresp",
-                        ret: an.ret,
-                        pt: an.status,
-                        gcid: al
+                        ret: ak.ret,
+                        pt: ak.status,
+                        gcid: ai
                     })
-                } catch(ao) {}
+                } catch(al) {}
             },
             getPlatForm: function() {
-                var ak = "webpage";
+                var ah = "webpage";
                 try {
-                    ak = (window.external.getVodClientVer()) ? "client": "webpage"
-                } catch(al) {}
-                return ak
+                    ah = (window.external.getVodClientVer()) ? "client": "webpage"
+                } catch(ai) {}
+                return ah
             },
-            setFeeParam: function(e) {
-                var am = this;
-                var al = y;
-                if (am.isXlpan || am.isThunderBox) {
-                    al = "xlpan"
+            setFeeParam: function(ah) {
+                var ak = this;
+                var aj = x;
+                if (ak.isXlpan || ak.isThunderBox) {
+                    aj = "xlpan"
                 }
-                if (e) {
-                    var an = am.curPlay.src_info;
-                    var ak = an.file_size || "";
+                if (ah) {
+                    var al = ak.curPlay.src_info;
+                    var ai = al.file_size || "";
                     G_PLAYER_INSTANCE.setFeeParam({
-                        sessionid: am.user.s,
-                        userid: am.user.u,
-                        userType: am.userType,
+                        sessionid: ak.user.s,
+                        userid: ak.user.u,
+                        userType: 1,
                         isvip: 6,
-                        gcid: an.gcid,
+                        gcid: ak.$PU("g", ak.curDlUrl),
                         cid: "0000000000000000000000000000000000000000",
-                        name: am.curName,
-                        url_hash: am.curPlay.url_hash,
-                        from: al,
-                        url: h(am.curUrl),
-                        index: (am.curUrl.substr(parseInt(am.curUrl.lastIndexOf("/")) + 1, am.curUrl.length)),
-                        ygcid: an.gcid,
-                        ycid: an.cid,
-                        filesize: ak,
-                        info_hash: am.curInfohash
+                        name: ak.curName,
+                        url_hash: ak.curPlay.url_hash,
+                        from: aj,
+                        url: g(ak.curUrl),
+                        index: (ak.curUrl.substr(parseInt(ak.curUrl.lastIndexOf("/")) + 1, ak.curUrl.length)),
+                        ygcid: al.gcid,
+                        ycid: al.cid,
+                        filesize: ai,
+                        info_hash: ak.curInfohash
                     })
                 } else {
                     G_PLAYER_INSTANCE.setFeeParam({
-                        sessionid: am.user.s,
-                        userid: am.user.u,
-                        userType: am.userType,
+                        sessionid: ak.user.s,
+                        userid: ak.user.u,
+                        userType: 1,
                         isvip: 6,
                         gcid: "",
                         cid: "0000000000000000000000000000000000000000",
                         name: "",
-                        url_hash: am.curPlay.url_hash,
-                        from: al,
-                        url: h(am.curUrl),
-                        index: (am.curUrl.substr(parseInt(am.curUrl.lastIndexOf("/")) + 1, am.curUrl.length)),
+                        url_hash: ak.curPlay.url_hash,
+                        from: aj,
+                        url: g(ak.curUrl),
+                        index: (ak.curUrl.substr(parseInt(ak.curUrl.lastIndexOf("/")) + 1, ak.curUrl.length)),
                         ygcid: "",
                         ycid: "",
                         filesize: "",
-                        info_hash: am.curInfohash
+                        info_hash: ak.curInfohash
                     })
                 }
             },
-            $PU: function(al, ak) {
-                ak = ad(ak) ? location.href: ak;
-                var e = ak.match(new RegExp("[#|?]([^#]*)[#|?]?"));
-                ak = "&" + (X(e) ? "": e[1]);
-                e = ak.match(new RegExp("&" + al + "=", "i"));
-                return X(e) ? undefined: ak.substr(e.index + 1).split("&")[0].split("=")[1]
+            $PU: function(aj, ai) {
+                ai = ac(ai) ? location.href: ai;
+                var ah = ai.match(new RegExp("[#|?]([^#]*)[#|?]?"));
+                ai = "&" + (W(ah) ? "": ah[1]);
+                ah = ai.match(new RegExp("&" + aj + "=", "i"));
+                return W(ah) ? undefined: ai.substr(ah.index + 1).split("&")[0].split("=")[1]
             },
-            getFormats: function(ak) {
-                ak = ak || this.lastFormat;
-                var e = {
+            getFormats: function(ai) {
+                ai = ai || this.lastFormat;
+                var ah = {
                     c: {
                         checked: false,
                         enable: false
@@ -1199,95 +1193,95 @@
                         enable: false
                     }
                 };
-                e.g.enable = typeof(this.vod_info[1]) != "undefined";
-                e.c.enable = typeof(this.vod_info[2]) != "undefined";
-                e.p.enable = true;
-                e[ak].checked = true;
-                G_PLAYER_INSTANCE.setFormats(e)
+                ah.g.enable = typeof(this.vod_info[1]) != "undefined";
+                ah.c.enable = typeof(this.vod_info[2]) != "undefined";
+                ah.p.enable = true;
+                ah[ai].checked = true;
+                G_PLAYER_INSTANCE.setFormats(ah)
             },
-            setFormats: function(e, an, ak, al) {
-                var am = G_PLAYER_INSTANCE.getPlayPosition();
-                var e = this;
-                ag = true;
-                if (ak == "p") {
-                    e.close();
+            setFormats: function(ah, al, ai, aj) {
+                var ak = G_PLAYER_INSTANCE.getPlayPosition();
+                var ah = this;
+                ae = true;
+                if (ai == "p") {
+                    ah.close();
                     G_PLAYER_INSTANCE.setIsChangeQuality(true);
-                    this.startPlay(this.vod_info[0].vod_url, "p", am, 1);
-                    e.getFormats()
+                    this.startPlay(this.vod_info[0].vod_url, "p", ak, 1);
+                    ah.getFormats()
                 } else {
-                    if (ak == "g") {
-                        e.close();
+                    if (ai == "g") {
+                        ah.close();
                         G_PLAYER_INSTANCE.setIsChangeQuality(true);
-                        this.startPlay(this.vod_info[1].vod_url, "g", am, 1);
-                        e.getFormats()
+                        this.startPlay(this.vod_info[1].vod_url, "g", ak, 1);
+                        ah.getFormats()
                     } else {
-                        if (ak == "c") {
-                            e.close();
+                        if (ai == "c") {
+                            ah.close();
                             G_PLAYER_INSTANCE.setIsChangeQuality(true);
-                            this.startPlay(this.vod_info[2].vod_url, "c", am, 1);
-                            e.getFormats()
+                            this.startPlay(this.vod_info[2].vod_url, "c", ak, 1);
+                            ah.getFormats()
                         }
                     }
                 }
             },
-            error: function(al) {
-                U.innerHTML = "<img src='" + ai + "img/play_bg.jpg' width='100%' height='100%' /><div style='position:absolute;left:0;top:46%;text-align:center;font-size:14px;color:#FFF;margin: 0;width:100%;height:22px;'>" + al + "</div>";
+            error: function(ai) {
+                T.innerHTML = "<img src='" + ag + "img/play_bg.jpg' width='100%' height='100%' /><div style='position:absolute;left:0;top:46%;text-align:center;font-size:14px;color:#FFF;margin: 0;width:100%;height:22px;'>" + ai + "</div>";
                 try {
-                    window[t].call()
-                } catch(ak) {}
+                    window[s].call()
+                } catch(ah) {}
             },
             close: function() {
                 try {
                     G_PLAYER_INSTANCE.close();
                     G_PLAYER_INSTANCE.closeNetStream()
-                } catch(ak) {}
+                } catch(ah) {}
             },
-            getCaption: function(al, am) {
+            getCaption: function(aj, ak) {
                 if (c) {
                     return true
                 }
-                var e = this;
-                var ak = {
+                var ah = this;
+                var ai = {
                     description: "请选择字幕文件(*.srt、*.ass)",
                     extension: "*.srt;*.ass",
                     limitSize: 5 * 1024 * 1024,
-                    uploadURL: aa + "interface/upload_file/?cid=" + am,
+                    uploadURL: Z + "interface/upload_file/?cid=" + ak,
                     timeOut: "30"
                 };
-                G_PLAYER_INSTANCE.setCaptionParam(ak);
-                l(G + "subtitle/list/gcid/" + al + "/cid/" + am, "XL_CLOUD_FX_INSTANCEqueryCaptionBack", 
-                function(an) {
-                    e.queryCaptionBack(an, am)
+                G_PLAYER_INSTANCE.setCaptionParam(ai);
+                k(F + "subtitle/list/gcid/" + aj + "/cid/" + ak, "XL_CLOUD_FX_INSTANCEqueryCaptionBack", 
+                function(al) {
+                    ah.queryCaptionBack(al, ak)
                 })
             },
-            queryCaptionBack: function(e, at) {
-                var ar = e.sublist.length;
-                if (e.sublist != undefined && e.sublist.length > 0) {
-                    var aq = e.sublist;
-                    for (var ap = 0; ap < ar; ap++) {
+            queryCaptionBack: function(ah, aq) {
+                var ap = ah.sublist.length;
+                if (ah.sublist != undefined && ah.sublist.length > 0) {
+                    var ao = ah.sublist;
+                    for (var an = 0; an < ap; an++) {
                         if (this.captionList.length > 3) {
                             break
                         }
-                        var aw = aq[ap];
-                        if (aw.sname == undefined) {
+                        var au = ao[an];
+                        if (au.sname == undefined) {
                             continue
                         }
-                        var au = aw.sname;
-                        var av = au.length;
-                        if (av > 0) {
-                            for (var ao = 0; ao < av; ao++) {
-                                var ak = h(au[ao]);
-                                var am = ak.lastIndexOf(".");
-                                var an = ak.length;
-                                var al = ak.substring(parseInt(am) + 1, an).toLowerCase();
-                                if (al == "ass" || al == "srt") {
+                        var ar = au.sname;
+                        var at = ar.length;
+                        if (at > 0) {
+                            for (var am = 0; am < at; am++) {
+                                var ai = g(ar[am]);
+                                var ak = ai.lastIndexOf(".");
+                                var al = ai.length;
+                                var aj = ai.substring(parseInt(ak) + 1, al).toLowerCase();
+                                if (aj == "ass" || aj == "srt") {
                                     this.captionList.push({
-                                        autoload: aw.autoload,
-                                        language: aw.language[0] || "",
-                                        scid: aw.scid,
-                                        sname: ak,
-                                        surl: "http://i.vod.xunlei.com/subtitle/data/scid/" + aw.scid + ".srt",
-                                        svote: aw.svote || 0
+                                        autoload: au.autoload,
+                                        language: au.language[0] || "",
+                                        scid: au.scid,
+                                        sname: ai,
+                                        surl: "http://i.vod.xunlei.com/subtitle/data/scid/" + au.scid + ".srt",
+                                        svote: au.svote || 0
                                     })
                                 }
                             }
@@ -1298,24 +1292,24 @@
                     }
                 }
             },
-            addCaptionList: function(am) {
-                var e = am.length;
-                if (!am || typeof(am) != "object" || e < 1) {
+            addCaptionList: function(ak) {
+                var ah = ak.length;
+                if (!ak || typeof(ak) != "object" || ah < 1) {
                     return false
                 }
-                var al = 1;
+                var aj = 1;
                 if (this.captionList.length == 0) {
-                    al = 3
+                    aj = 3
                 } else {
                     if (this.captionList.length == 1) {
-                        al = 2
+                        aj = 2
                     }
                 }
-                for (var ak = 0; ak < e; ak++) {
-                    if (ak == al) {
+                for (var ai = 0; ai < ah; ai++) {
+                    if (ai == aj) {
                         break
                     }
-                    this.captionList.push(am[ak])
+                    this.captionList.push(ak[ai])
                 }
                 if (this.captionList.length > 3) {
                     this.captionList.shift()
@@ -1323,65 +1317,65 @@
                 G_PLAYER_INSTANCE.setCaptionList(this.captionList)
             },
             getBtFileLastPos: function() {
-                var ak = this;
-                if (ak.type == "url" || ak.curInfohash.length != 40) {
+                var ai = this;
+                if (ai.type == "url" || ai.curInfohash.length != 40) {
                     return false
                 }
-                if (ak.fileList == null) {
-                    var e = G + "req_subBT/info_hash/" + ak.curInfohash + "/req_num/2/req_offset/0?cache=" + new Date().getTime();
-                    K(e, "XL_CLOUD_FX_INSTANCEqueryFileListBack", 
-                    function(al) {
-                        ak.fileList = al.resp;
-                        if (ak.fileList.ret == 0) {
-                            ak.getLastPos()
+                if (ai.fileList == null) {
+                    var ah = F + "req_subBT/info_hash/" + ai.curInfohash + "/req_num/2/req_offset/0?cache=" + new Date().getTime();
+                    J(ah, "XL_CLOUD_FX_INSTANCEqueryFileListBack", 
+                    function(aj) {
+                        ai.fileList = aj.resp;
+                        if (ai.fileList.ret == 0) {
+                            ai.getLastPos()
                         }
                     })
                 }
             },
             setShareParam: function() {
-                var e = "我正在观看" + h(this.curName);
-                G_PLAYER_INSTANCE.setShareParam(e, h(R))
+                var ah = "我正在观看" + g(this.curName);
+                G_PLAYER_INSTANCE.setShareParam(ah, g(Q))
             },
             loginNotice: function() {
                 window.open("http://vod.xunlei.com/home.html?xcvp=login");
                 this.error("继续<a style='color:#1874CA' href='javascript:;' onclick='XL_CLOUD_FX_INSTANCE.continuePlay();return false;'>播放</a>")
             },
             continuePlay: function() {
-                var e = this;
-                e.error("请稍候，精彩即将开启...");
-                e.uCheck()
+                var ah = this;
+                ah.error("请稍候，精彩即将开启...");
+                ah.uCheck()
             },
             getLastPos: function() {
-                var am = this;
-                if (S) {
-                    am.lastPos = S;
+                var ak = this;
+                if (R) {
+                    ak.lastPos = R;
                     return true
                 }
-                am.lastPos = 0;
-                if (am.type == "bt") {
-                    var ak = am.curUrl.substr(am.curUrl.lastIndexOf("/") + 1, am.curUrl.length);
-                    var al = am.fileList.main_task_url_hash
+                ak.lastPos = 0;
+                if (ak.type == "bt") {
+                    var ai = ak.curUrl.substr(ak.curUrl.lastIndexOf("/") + 1, ak.curUrl.length);
+                    var aj = ak.fileList.main_task_url_hash
                 } else {
-                    var al = am.curPlay.url_hash
+                    var aj = ak.curPlay.url_hash
                 }
-                var an = null,
-                e = true;
-                K(G + "req_last_play_pos?userid=" + am.user.u + "&query_list=" + al + "_" + ((am.type == "bt") ? 1: 0) + "&t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryLastPosBack", 
-                function(aq) {
-                    clearTimeout(an);
-                    e = false;
-                    if (aq.resp && aq.resp.ret == 0) {
-                        var ap = aq.resp.res_list;
-                        if (ap && ap[0]) {
-                            if (ap[0].is_bt_play == 0) {
-                                am.lastPos = ap[0].last_play_pos
+                var al = null,
+                ah = true;
+                J(F + "req_last_play_pos?userid=" + ak.user.u + "&query_list=" + aj + "_" + ((ak.type == "bt") ? 1: 0) + "&t=" + new Date().getTime(), "XL_CLOUD_FX_INSTANCEqueryLastPosBack", 
+                function(ao) {
+                    clearTimeout(al);
+                    ah = false;
+                    if (ao.resp && ao.resp.ret == 0) {
+                        var an = ao.resp.res_list;
+                        if (an && an[0]) {
+                            if (an[0].is_bt_play == 0) {
+                                ak.lastPos = an[0].last_play_pos
                             } else {
-                                if (ap[0].sub_list && ap[0].sub_list.length > 0) {
-                                    var at = ap[0].sub_list;
-                                    var ao = ap[0].sub_list.length;
-                                    for (var ar = 0; ar < ao; ar++) {
-                                        if (at[ar].idx == ak) {
-                                            am.lastPos = at[ar].last_play_pos;
+                                if (an[0].sub_list && an[0].sub_list.length > 0) {
+                                    var aq = an[0].sub_list;
+                                    var am = an[0].sub_list.length;
+                                    for (var ap = 0; ap < am; ap++) {
+                                        if (aq[ap].idx == ai) {
+                                            ak.lastPos = aq[ap].last_play_pos;
                                             break
                                         }
                                     }
@@ -1391,174 +1385,174 @@
                     }
                 });
                 setTimeout(function() {
-                    clearTimeout(an);
-                    e = false;
-                    if (e) {
-                        am.lastPos = 0
+                    clearTimeout(al);
+                    ah = false;
+                    if (ah) {
+                        ak.lastPos = 0
                     }
                 },
                 1000)
             },
-            genBtUrl: function(al, am, ak) {
-                if (!al && !am) {
+            genBtUrl: function(aj, ak, ai) {
+                if (!aj && !ak) {
                     return false
                 }
-                var e = "";
-                if (am && am.length == 40) {
-                    e = am
+                var ah = "";
+                if (ak && ak.length == 40) {
+                    ah = ak
                 } else {
-                    if (h(al).substr(0, 5) == "bt://") {
-                        e = h(al).substring(5, h(al).lastIndexOf("/"))
+                    if (g(aj).substr(0, 5) == "bt://") {
+                        ah = g(aj).substring(5, g(aj).lastIndexOf("/"))
                     }
                 }
-                if (e) {
-                    if (!ak) {
-                        this.curInfohash = e
+                if (ah) {
+                    if (!ai) {
+                        this.curInfohash = ah
                     }
-                    return "http://bt.box.n0808.com/" + e.substr(0, 2) + "/" + e.substr(38, 40) + "/" + e + ".torrent"
+                    return "http://bt.box.n0808.com/" + ah.substr(0, 2) + "/" + ah.substr(38, 40) + "/" + ah + ".torrent"
                 } else {
                     return false
                 }
             },
-            validUrl: function(e) {
-                if (e == "" || e == "none" || e == "undefined" || (document.location.protocol + "//" + document.location.host + "/") == e) {
+            validUrl: function(ah) {
+                if (ah == "" || ah == "none" || ah == "undefined" || (document.location.protocol + "//" + document.location.host + "/") == ah) {
                     return false
                 }
-                var ak = e.toLowerCase();
-                if (((ak.indexOf("http") == -1) && (ak.indexOf("https") == -1) && (ak.indexOf("ftp") == -1) && (ak.indexOf("thunder") == -1) && (ak.indexOf("mms") == -1) && (ak.indexOf("qqdl") == -1) && (ak.indexOf("rtsp") == -1) && (ak.indexOf("magnet") == -1) && (ak.indexOf("flashget") == -1) && (ak.indexOf("ed2k") == -1) && (ak.indexOf("bt") == -1) && (ak.indexOf("xlpan") == -1)) || ak == "") {
+                var ai = ah.toLowerCase();
+                if (((ai.indexOf("http") == -1) && (ai.indexOf("https") == -1) && (ai.indexOf("ftp") == -1) && (ai.indexOf("thunder") == -1) && (ai.indexOf("mms") == -1) && (ai.indexOf("qqdl") == -1) && (ai.indexOf("rtsp") == -1) && (ai.indexOf("magnet") == -1) && (ai.indexOf("flashget") == -1) && (ai.indexOf("ed2k") == -1) && (ai.indexOf("bt") == -1) && (ai.indexOf("xlpan") == -1)) || ai == "") {
                     return false
                 } else {
                     return true
                 }
             },
-            windowOpenInPlayer: function(al) {
-                var ap = document;
+            windowOpenInPlayer: function(ai) {
+                var am = document;
                 _body = document.getElementsByTagName("body")[0];
-                var ao = null;
-                var ak = ap.getElementById("dapctrl");
-                if (ak) {
+                var al = null;
+                var ah = am.getElementById("dapctrl");
+                if (ah) {
                     try {
-                        ap.getElementsByTagName("body")[0].removeChild(ak)
-                    } catch(an) {}
+                        am.getElementsByTagName("body")[0].removeChild(ah)
+                    } catch(ak) {}
                 }
-                if (!u && !ap.getElementById("dapctrl")) {
-                    var am = ap.createElement("object");
-                    am.setAttribute("type", "application/x-thunder-dapctrl");
-                    am.setAttribute("id", "dapctrl");
-                    am.setAttribute("width", "0");
-                    am.setAttribute("height", "0");
-                    am.style.visibility = "hidden";
-                    _body.appendChild(am)
+                if (!t && !am.getElementById("dapctrl")) {
+                    var aj = am.createElement("object");
+                    aj.setAttribute("type", "application/x-thunder-dapctrl");
+                    aj.setAttribute("id", "dapctrl");
+                    aj.setAttribute("width", "0");
+                    aj.setAttribute("height", "0");
+                    aj.style.visibility = "hidden";
+                    _body.appendChild(aj)
                 } else {
                     try {
-                        ao = new ActiveXObject("DapCtrl.DapCtrl")
-                    } catch(an) {}
+                        al = new ActiveXObject("DapCtrl.DapCtrl")
+                    } catch(ak) {}
                 }
-                if (ao) {
-                    ao.Put("iADShowMode", 1);
-                    ao.Put("sOpenAdUrl", al);
-                    ao = null
+                if (al) {
+                    al.Put("iADShowMode", 1);
+                    al.Put("sOpenAdUrl", ai);
+                    al = null
                 } else {
-                    window.open(al)
+                    window.open(ai)
                 }
             },
-            openMini: function(ak, al) {
+            openMini: function(ah, ai) {
                 try {
                     this.reportPlayPos()
-                } catch(am) {}
-                window.open("http://" + goip + "/mini.html?" + ak, "miniplayer", "top=10,left=10,height=446,width=684,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,status=no,fullscreen=no")
+                } catch(aj) {}
+                window.open("http://" + goip + "/mini.html?" + ah, "miniplayer", "top=10,left=10,height=446,width=684,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,status=no,fullscreen=no")
             },
             enableKKVA: function() {
-                var am = this;
-                am.kkvaValid = false;
-                if (c || (!am.isThunderBox && !u)) {
+                var aj = this;
+                aj.kkvaValid = false;
+                if (c || (!aj.isThunderBox && !t)) {
                     return true
                 }
-                var al = document.getElementsByTagName("body")[0];
-                var aq = document.getElementById("vasensor");
+                var ai = document.getElementsByTagName("body")[0];
+                var an = document.getElementById("vasensor");
                 try {
-                    al.removeChild(aq)
-                } catch(an) {}
-                var ao = document.createElement("object");
-                ao.setAttribute("id", "vasensor");
-                ao.setAttribute("width", "0");
-                ao.setAttribute("height", "0");
-                ao.style.visibility = "hidden";
-                if (!u) {
-                    ao.setAttribute("type", "application/x-thunder-kkva")
+                    ai.removeChild(an)
+                } catch(ak) {}
+                var al = document.createElement("object");
+                al.setAttribute("id", "vasensor");
+                al.setAttribute("width", "0");
+                al.setAttribute("height", "0");
+                al.style.visibility = "hidden";
+                if (!t) {
+                    al.setAttribute("type", "application/x-thunder-kkva")
                 } else {
-                    ao.setAttribute("classid", "CLSID:96CD6DA7-17F2-4576-82B0-BE4526FB7D6B")
+                    al.setAttribute("classid", "CLSID:96CD6DA7-17F2-4576-82B0-BE4526FB7D6B")
                 }
-                document.getElementsByTagName("body")[0].appendChild(ao);
-                var at = 0;
+                document.getElementsByTagName("body")[0].appendChild(al);
+                var ap = 0;
                 if (XL_CLOUD_FX_INSTANCE.lastFormat == "c") {
-                    at = 2
+                    ap = 2
                 } else {
                     if (XL_CLOUD_FX_INSTANCE.lastFormat == "g") {
-                        at = 1
+                        ap = 1
                     }
                 }
-                var au = XL_CLOUD_FX_INSTANCE.vod_info[at]["vod_url"];
-                var ap = this.$PU("g", au);
-                if (am.isThunderBox) {
+                var aq = XL_CLOUD_FX_INSTANCE.vod_info[ap]["vod_url"];
+                var am = this.$PU("g", aq);
+                if (aj.isThunderBox) {
                     try {
-                        var ar = window.external.GetClientVersion()
-                    } catch(an) {
-                        var ar = "1.6"
+                        var ao = window.external.GetClientVersion()
+                    } catch(ak) {
+                        var ao = "1.6"
                     }
-                    if (ar < "1.6") {} else {
+                    if (ao < "1.6") {} else {
                         try {
-                            if (ao.Get("iVersion") != 100007) {
-                                ao.EnableVA("yvod", ap, au, 0);
-                                am.kkvaValid = true;
-                                ao.Put("iXMPIconTray", 0);
-                                am.stat({
+                            if (al.Get("iVersion") != 100007) {
+                                al.EnableVA("yvod", am, aq, 0);
+                                aj.kkvaValid = true;
+                                al.Put("iXMPIconTray", 0);
+                                aj.stat({
                                     f: "kkva",
-                                    g: ap,
+                                    g: am,
                                     client: "thunderBox"
                                 })
                             }
-                        } catch(an) {}
+                        } catch(ak) {}
                     }
                 } else {
                     try {
-                        var ak = document.getElementById("myPlugin");
-                        if (!ak) {
-                            var ak = document.createElement("object");
-                            ak.setAttribute("id", "myPlugin");
-                            ak.setAttribute("width", "0");
-                            ak.setAttribute("height", "0");
-                            ak.style.visibility = "hidden";
-                            if (u) {
-                                ak.setAttribute("classid", "clsid:BD1E9B61-F3B2-4A19-AB69-68E77CA81C42")
+                        var ah = document.getElementById("myPlugin");
+                        if (!ah) {
+                            var ah = document.createElement("object");
+                            ah.setAttribute("id", "myPlugin");
+                            ah.setAttribute("width", "0");
+                            ah.setAttribute("height", "0");
+                            ah.style.visibility = "hidden";
+                            if (t) {
+                                ah.setAttribute("classid", "clsid:BD1E9B61-F3B2-4A19-AB69-68E77CA81C42")
                             } else {
-                                ak.setAttribute("type", "application/x-thunderbox-upload")
+                                ah.setAttribute("type", "application/x-thunderbox-upload")
                             }
-                            document.getElementsByTagName("body")[0].appendChild(ak)
+                            document.getElementsByTagName("body")[0].appendChild(ah)
                         }
-                        if (ak.FindThunderbox() && ak.GetThunderboxVersion() >= "1.6" && ao.Get("iVersion") != 100007) {
-                            ao.EnableVA("yvod", ap, au, 0);
-                            am.kkvaValid = true;
-                            ao.Put("iXMPIconTray", 0);
-                            am.stat({
+                        if (ah.FindThunderbox() && ah.GetThunderboxVersion() >= "1.6" && al.Get("iVersion") != 100007) {
+                            al.EnableVA("yvod", am, aq, 0);
+                            aj.kkvaValid = true;
+                            al.Put("iXMPIconTray", 0);
+                            aj.stat({
                                 f: "kkva",
-                                g: ap,
+                                g: am,
                                 client: "web"
                             })
                         } else {}
-                    } catch(an) {}
+                    } catch(ak) {}
                 }
                 return true
             }
         };
-        K(aa + "fx?t=" + new Date().getTime(), "", 
-        function(e) {
+        J(Z + "fx?t=" + new Date().getTime(), "", 
+        function(ah) {
             return false
         });
-        var o = c ? (ai + "fx/js/ipad.js?" + af) : ("/svn/vod/f.h?" + af);
-        var T = new Q(o);
-        T.buildScriptTag();
-        T.addScriptTag()
+        var n = c ? (ag + "fx/js/ipad.js?" + ad) : ("/svn/vod/f.h?" + ad);
+        var S = new P(n);
+        S.buildScriptTag();
+        S.addScriptTag()
     },
     1)
 })();

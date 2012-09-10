@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
 <head>
+	<title>播放页面</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>播放特权 弹窗播放页</title>
 <script type="text/javascript" src="Scripts/base64.js"></script>
 <script type="text/javascript" src="Scripts/urlconvert.js"></script>
 </head>
@@ -33,12 +33,12 @@ html, body
 			try {r = decodeURIComponent(decodeURIComponent(str));} catch(e) {try {r = decodeURIComponent(str);} catch(e) {r = str;} }
 			return r;
 		}
-	var gcid = $PU('gcid'),cid=$PU('cid'),filesize=$PU('filesize'),url=$PU('url'),filename=$PU('filename'),from=$PU('from'),enable_panel=$PU('enable_panel'),autoplay=$PU('autoplay'),share_url = $PU('share_url'),enable_download = $PU('enable_download'),enable_caption=$PU('enable_caption'),enable_filelist=$PU('enable_filelist'),enable_setting=$PU('enable_setting'),enable_kkva=$PU('enable_kkva'),start=$PU('start'),format=$PU('format'),uvs=$PU('uvs');//userid=$PU('u'),isvip=$PU('v'),sessionid=$PU('s'),
-	var decodeUrl = decode(url);
-	if(decodeUrl.substr(0,5)=='bt://')
+	var gcid = $PU('gcid'),cid=$PU('cid'),filesize=$PU('filesize'),url=$PU('url'),filename=$PU('filename'),userid=$PU('userid'),isvip=$PU('isvip'),from=$PU('from'),enable_panel=$PU('enable_panel'),autoplay=$PU('autoplay'),share_url = $PU('share_url'),enable_download = $PU('enable_download'),enable_caption=$PU('enable_caption'),enable_filelist=$PU('enable_filelist'),enable_setting=$PU('enable_setting'),enable_kkva=$PU('enable_kkva'),start=$PU('start'),format=$PU('format');
+	var url = decode(url);
+	if(url.substr(0,5)=='bt://')
 		type ='bt';
-	if(decodeUrl.indexOf('/')==0)
-		url = encodeURIComponent(decodeUrl.substr(1,decodeUrl.length));
+	if(url.indexOf('/')==0)
+			url = url.substr(1,url.length);
 	if(!filesize || filesize=='undefined' || filesize=='null')
 		filesize = '';
 	if(!gcid || gcid=='undefined' || gcid=='null')
@@ -56,24 +56,34 @@ html, body
 	if(format !='g' && format!='c')
 		format = 'p';
 
-
-
-	from=from||'vod_mini';
+	var getCookie = function(name){return (document.cookie.match(new RegExp("(^"+name+"| "+name+")=([^;]*)"))==null)?"":RegExp.$2;}
+	var setCookie = function(name, value, sec) {
+		if(arguments.length > 2) {
+			var expireDate = new Date(new Date().getTime() + sec * 1000);
+			document.cookie = name + "=" + escape(value) + "; path=/; domain=xunlei.com; expires=" + expireDate.toGMTString();
+		} else
+			document.cookie = name + "=" + escape(value) + "; path=/; domain=xunlei.com";
+	}
+	if(!getCookie('userid') && userid){
+		setCookie('userid',userid);
+	}
+	if(!getCookie('isvip') && isvip){
+		setCookie('isvip',isvip);
+	}
+	from=from||'playerdemo';
 	document.write("<div name='XL_CLOUD_VOD_PLAYER' style='width:100%;height:100%;background:#000;position:absolute;' from='"+from+"' id='XL_CLOUD_VOD_PLAYER'>"
 	+"<img  src='http://vod.lixian.xunlei.com/img/player_startup.jpg' width='100%' height='100%' />"
-	+"<span href=\""+url+"\" width='100%'"+" height='100%'"+ "enable_panel='"+enable_panel+"' autoplay='true' share_url=\""+share_url+"\" gcid='"+gcid+"' enable_download='"+enable_download+"' enable_caption='"+enable_caption+"' enable_filelist='"+enable_filelist+"' enable_setting='"+enable_setting+"'enable_kkva='"+enable_kkva+"' cid='"+cid+"' url=\""+url+"\" filesize='"+filesize+"' title=\""+filename+"\" start='"+start+"' format='"+format+"' enable_openwindow='false'>"+filename+"</span>"
+	+"<span href='"+url+"' width='100%'"+" height='100%'"+ "enable_panel='"+enable_panel+"' autoplay='true' share_url='"+decode(share_url)+"' gcid='"+gcid+"' enable_download='"+enable_download+"' enable_caption='"+enable_caption+"' enable_filelist='"+enable_filelist+"' enable_setting='"+enable_setting+"'enable_kkva='"+enable_kkva+"' cid='"+cid+"' url='"+url+"' filesize='"+filesize+"' title='"+filename+"' start='"+start+"' format='"+format+"' enable_openwindow='false'>"+filename+"</span>"
 	+"</div>");
-</script>
-<script>
       (function(){
 			var x = document.createElement('script');
 			x.src="http://127.0.0.1:1218/dl";
-        x.onerror=function(){alert('请先运行松达电影点播');}
+        x.onerror=function(){alert('请先运行松达电影点播');
+}
 			document.body.appendChild(x);
 		})()
 </script>
-    <span id="userInfo" userid="1233434" sessionid="1233CFEA2F9C738132AFEA055C0B46C897CB03845BD04E8BCD226216FD408C3150872B79FDE40D6BE6FB19AA72AC88CDD5358967C274029A2B75D8CC5B1670B9"></span>
-
 <script type="text/javascript" charset="utf-8" src='/svn/vod/p.h'></script>
+
 </body>
 </html>
