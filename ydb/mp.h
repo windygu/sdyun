@@ -402,12 +402,12 @@
                     downloading: "该资源云端下载与转码需要较长时间，" + h,
                     transFail: "该文件转码失败，<span style='color:#1874CA;cursor:pointer;' onclick='top.document.location.reload()'>重试</span>",
                     serverError: "服务器正忙，请稍后再试",
-                    serverInfo: '<br/>本站地址: <a style="color:#0ff;" href="http://ddtv1.cn">http://ddtv1.cn/</a>'
+                    serverInfo: '<br/>'
                 };
                 if (a.ret == 6 || a.ret == 7) {
                     d = j.illegalUrl + j.serverInfo
                 } else if (a.ret == 403) {
-                    d = a.error_msg + '<br/><a style=\'color:#1874CA;\' onclick="top.document.location.href=\'http://ddtv1.cn\';return false;" href="http://ddtv1.cn" target="_blank">点此查看更多精彩内容</a>'
+                    d = a.error_msg + '<br/>'
                 } else {
                     if (a.ret == 8) {
                         d = j.notVideo + j.serverInfo
