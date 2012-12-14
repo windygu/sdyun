@@ -979,8 +979,6 @@ setTimeout("showTime()",1000*50);
     instance.fireEvent(event);
     instance.trace("flv_playerEvent", event)
 }
-function showTime(){
-G_PLAYER_INSTANCE.setNoticeMsg("松达电脑科技 用心为您服务 ",30);
-}
+
 var G_PLAYER_ERROR = new KKPlayerError;
 var G_PLAYER_INIT = new KKPlayerInit;
