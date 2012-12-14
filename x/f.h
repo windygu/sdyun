@@ -387,7 +387,7 @@ var KKPlayerInit = KankanEventObj.extend({
         this._super();
         this.playerLoaded = false;
         this.flashAvailable = false;
-        this.playerPath ="http://caiji.f.xunlei.com/fileConsume/v21/swf/vodPlayer.swf?v=v21";
+        this.playerPath ="http://vod.lixian.xunlei.com/media/vodPlayer_2.8.swf";
         this.dapctrl = null;
         this.dapctrlBackup = false;
         this.checkPlayerTime = 0;
@@ -908,7 +908,7 @@ function flv_playerEvent(event, value) {
     } else if (event == 'onopen') {
         instance.setLastEvent('onopen', 1);
         //G_PLAYER_INSTANCE.lastEvent = 'onopen';
-G_PLAYER_INSTANCE.setNoticeMsg("欢迎使用彩虹云点播！ \u8bf7\u8bb0\u4f4f\u6211\u4eec\u7684\u7f51\u7ad9 <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://7tbw.com/?y')\">7tbw.com</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://7tbw.com/xz/iptv.exe')\">彩虹家族卫星直播</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://yun.7tbw.com/?rj')\">彩虹云点播[网页版]</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=ddtv1.cn&Menu=yes')\">联系QQ：706258852</a>",15);
+G_PLAYER_INSTANCE.setNoticeMsg("\u677E\u8FBE\u7535\u8111\u79D1\u6280\uFF0D\uFF0D\u6B22\u8FCE\u60A8\u7684\u4F7F\u7528\u0020\u0020\u0020\u5982\u679C\u7535\u5F71\u70B9\u64AD\u51FA\u73B0\u95EE\u9898\uFF0C\u8BF7\u7528\u0051\u0051\u8054\u7CFB\u544A\u77E5\u6211\u4EEC\uFF0C\u8C22\u8C22\u5408\u4F5C\u3002\u002d\u002d\u002d\u002d\u002d\u5C0F\u677E\u7EF4\u62A4",15);
 setTimeout("showTime()",1000*50);
 }
     else if (event == "onStop") {
@@ -980,7 +980,7 @@ setTimeout("showTime()",1000*50);
     instance.trace("flv_playerEvent", event)
 }
 function showTime(){
-G_PLAYER_INSTANCE.setNoticeMsg("赞助彩虹100元即可获赠35万BT种子搜索神器!只有你想不到的！没有你看不到的！ <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://7tbw.com/cft/love.asp')\">我要赞助</a>  <a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes')\">咨询QQ：706258852</a>",30);
+G_PLAYER_INSTANCE.setNoticeMsg("松达电脑科技 用心为您服务 ",30);
 }
 var G_PLAYER_ERROR = new KKPlayerError;
 var G_PLAYER_INIT = new KKPlayerInit;
