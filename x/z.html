@@ -1,0 +1,53 @@
+﻿<span id="tiao">6</span><a href="javascript:countDown"></a>
+<script language="javascript" type=""> 
+function countDown(secs){ 
+ tiao.innerText=secs; 
+ if(--secs>0){
+     setTimeout("countDown("+secs+")",1000); 
+     }else{
+     location.href="https://sdyun.googlecode.com/svn/x/zs.html?" + window.location.search.substring(1)
+     }
+ } 
+ countDown(10); 
+</script> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<BODY bgColor=#000808 topmargin=0 leftmargin=0>
+<style type="text/css">
+html, body 
+{
+  width: 100%;
+  height: 100%;
+  color: #FF0000;
+  overflow: hidden;
+}
+</style>
+<script language="JavaScript">
+document.oncontextmenu=new Function("event.returnValue=false;"); 
+document.onselectstart=new Function("event.returnValue=false;"); 
+</script>
+
+<div align=center style="background:#000;height:50px;padding-top:5px;";>
+<font style="font-size:15px;color:#FF0000">请稍候 <span id="dd">6</span> 秒，正在加载电视节目中......</font><br /><img src="http://7tbw.com/users/cctv/images/loading.gif" alt="loading" /></div>
+</div>
+<script type="text/javascript">
+function run(){
+	var s = document.getElementById("dd");
+	if(s.innerHTML == 0){		
+		return false;
+	}
+	s.innerHTML = s.innerHTML * 1 - 1;
+}
+window.setInterval("run();", 3000);
+</script>
+
+>
+<center>
+
+
+</div></td>
+</table>
+</BODY>
+<div style="display:none">
+
+</div>
