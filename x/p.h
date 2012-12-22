@@ -533,7 +533,7 @@
                 var ah = this;
                 G_PLAYER_INIT.attachEvent(G_PLAYER_INIT, "onLoadFlashError", 
                 function() {
-                    ah.error("播放器加载异常！<br>请尝试以下办法：<br>1,清理IE缓存！<br>2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>");
+                    ah.error("播放器加载异常！<br>请尝试以下办法：<br>1,清理IE缓存！<br>2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a> ");
                     ah.stat({
                         f: "loadflasherror",
                         ua: window.navigator.userAgent
@@ -639,7 +639,7 @@
                         G_PLAYER_INSTANCE.playOtherFail(false)
                     } else {
                         if (an) {
-                            am.error("您的点播无法播放！请更换视频！忙<br>请尝试以下办法：<br>1,更换其他播放地址！<br>2,重新登录迅雷帐号！<br>3,重新打开软件！<br>4,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>")
+                            am.error("您的点播无法播放！请更换视频！忙<br>请尝试以下办法：<br>1,更换其他播放地址！<br>2,重新登录迅雷帐号！<br>3,重新打开软件！<br>4,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ")
                         }
                     }
                     clearTimeout(aj)
@@ -658,17 +658,17 @@
                 }
                 var am = "<a href=\"javascript:XL_CLOUD_FX_INSTANCE.windowOpenInPlayer('http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes')\" style='color:#1874CA;'>反馈问题</a>";
                 var ak = {
-                    illegalUrl: "该视频下载链接有误，无法播放<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    notVideo: "该下载链接不含视频,无法播放<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
+                    illegalUrl: "该视频下载链接有误，无法播放<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    notVideo: "该下载链接不含视频,无法播放<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
                     leftTime: "您的点播无法播放！请更换视频！",
-                    unkonwTime4Xlpan: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    unkonwTime4Player: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    unkonwTime: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    downloading4Xlpan: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    downloading4Player: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    downloading: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    transFail: "<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
-                    serverError: "您的点播无法播放！请更换视频！转码<br>请尝试以下办法：<br>1,更换其他播放地址！<br>2,重新登录迅雷帐号！<br>3,重新打开软件！<br>4,联系QQ：<a href='http://wpa.qq.com/msgrd?V=1&Uin=706258852&Exe=QQ&Site=7tbw.com&Menu=yes' target='_blank' style='color:#1874CA;'>706258852</a>  官网：<a href='http://yun.7tbw.com/' target='_blank' style='color:#1874CA;'>http://yun.7tbw.com/</a>",
+                    unkonwTime4Xlpan: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    unkonwTime4Player: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    unkonwTime: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    downloading4Xlpan: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    downloading4Player: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    downloading: "您的点播无法播放！请更换视频！转码<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    transFail: "<br>1,请更换其他播放地址！2,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
+                    serverError: "您的点播无法播放！请更换视频！转码<br>请尝试以下办法：<br>1,更换其他播放地址！<br>2,重新登录迅雷帐号！<br>3,重新打开软件！<br>4,联系QQ：<a href='http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes' target='_blank' style='color:#1874CA;'>695556881</a>  ",
                     sessionidExpired: "检测到您未登录或登录异常，请重新登录后从列表页点播",
                     IPTooMuchUsed: "您的帐号因登录IP过多已被限制为不能播放，请于1天后重试，建议您尽快修改密码",
                     noPermit: "点播权限存在问题"
