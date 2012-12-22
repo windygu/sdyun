@@ -1460,11 +1460,6 @@
                 try {
                     this.reportPlayPos()
                 } catch(aj) {}
-                window.open("http://yun.7tbw.com/vip.html?url=" + ThunderEncode(encodeURIComponent(i)), "miniplayer", "top=10,left=10,height=446,width=684,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,status=no,fullscreen=no")
-            },
-            enableKKVA: function() {
-                var aj = this;
-                aj.kkvaValid = false;
                 if (c || (!aj.isThunderBox && !t)) {
                     return true
                 }
