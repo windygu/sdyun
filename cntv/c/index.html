@@ -1,0 +1,51 @@
+<head>
+<title>91kds - CCTVBOX</title>
+<style type="text/css">
+body,td,table{border:0;margin:0;FONT-FAMILY: 宋体;font-size: 9pt;}  
+#noPlayer{text-align: center;font-size:12px;color:#ffffff;}
+#noPlayer a:link,#noPlayer a:visited,#noPlayer a:hover {color:#f00;text-decoration: underline;}  
+.buf_bg {background-repeat: no-repeat;background-position:center center;}
+</style>
+<script language="JavaScript">
+document.oncontextmenu=new Function("event.returnValue=false;");
+document.onselectstart=new Function("event.returnValue=false;");
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+</script>
+</head>
+<body style="background-color: #000;" scroll="no">
+<table style="border:0px; width:100%; height:100%" cellpadding="0" cellspacing="0">
+ <tr style="height:100%;display:block;background-color:#000" id="trADV">
+  <td id="tdADV" style="vertical-align: middle"></td>
+ </tr>
+ <tr style="height:1;display:block;background-color:#000" id="trPPS">
+  <td id="tdPPS"></td>
+ </tr>
+ <tr style="height:25px;display:block;background-color:#000" id="trWMP">
+  <td nowrap id="tdWMP"><div id="playClavier" style="background:url('bj.gif') repeat-x;height:25px; width:100%;margin:0 ;">
+    <div id="playA" style="margin-left:0px;float:left; margin-top:0px;display:none;cursor: pointer;"><img id="imgPlay" alt="播放" src="PLAY_NORMAL.gif" onMouseOver="img_mouseover('Play')" onMouseOut="img_mouseout('Play')" onClick="imgDoPlay_onclick()" /></div>
+    <div id="pauseA" style="margin-left:0px;float:left; margin-top:0px;display:block;cursor: pointer;"><img id="imgPause" alt="暂停" src="PAUSE_NORMAL.gif" onMouseOver="img_mouseover('Pause')" onMouseOut="img_mouseout('Pause')" onClick="imgDoPlay_onclick()" /></div>
+    <div style="margin-left:0px;float:left; margin-top:0px;display:block;cursor: pointer;"><img alt="" src="s.gif" /></div>
+    <div id="voxA" style="margin-left:0px;float:left; margin-top:0px;display:block;cursor: pointer;"><img id="imgmute" alt="静音" src="MUTE_NORMAL.gif" onMouseOver="img_mouseover('mute')" onMouseOut="img_mouseout('mute')" onClick="imgDoMute_onclick()" /></div>
+    <div id="voxB" style="margin-left:0px;float:left; margin-top:0px;display:none;cursor: pointer;"><img id="imgUnMute" alt="取消静音" src="MUTE_NORMAL.gif" onMouseOver="img_mouseover('UnMute')" onMouseOut="img_mouseout('UnMute')" onClick="unMute()" /></div>
+    <div style="margin-left:0px;float:left; margin-top:0px;display:block;cursor: pointer;"><img alt="" src="s.gif" /></div>
+    <div id="logo" style="float:left;margin-left:10px; width:100px; height:25px;margin:0"><span id="dStatus" style="color: #fff;cursor: Default;font-size: 11px; float: left;margin-top:6px; margin-left: 10px; display: inline;"></span><span id="advtext" style="display: block; color: #fff; float: right;white-space: nowrap; margin-right: 2px"></span> </div>
+	<div id="spreadA" style="margin-right:0px;float:right; margin-top:0px;display:block;"><img src="FULLSCREEN_NORMAL.gif" alt="全屏" title="全屏" id="imgFullScreen" style="cursor:pointer;border:0;" onMouseOver="img_mouseover('FullScreen')" onClick="imgDoFullScreen_onclick()" onMouseOut="img_mouseout('FullScreen');hiddenTip()" /> </div>
+    
+    <div id="voxSlider" style="margin-top:0px;float:right;margin-right:10px;background: url('VOLUME_SLIDER_NORMAL.gif') no-repeat 0px 50%;width:70px;height:25px;"><img id="_VDrg" style="left: 0px; top:0px;height:21px;width:17px;cursor: e-resize; position: relative;" alt="" src="VOLUME_SLIDER_PRESSED.gif" onMouseOut="hiddenTip()" /><span id="tip" style="position: absolute; display: block; background-color: #666;font-family: 宋体; font-size: 11px;"></span></div>
+   </div></td>
+ </tr>
+</table>
+<script language="javascript">
+var gid;
+</script>
+<script charset="gb2312" type="text/javascript" src="cctv.js"></script>
+<script language='JScript' for='pps' event='StateInt(state)'>
+var A=pps.iMSPlayerState,_=pps.iBufPercent;if(state==1)bMute=false;if((state==4)&&(A==0)){bbufing=true;getBufPercent();showLoading()}if(((state==4)&&(A==3)&&(_>50)) || (state==5)){bbufing=false;$("dStatus").innerHTML="\u6b63\u5728\u64ad\u653e";hideLoading()}if(state==2||state==6||state==1||state==9);if(state==8);
+</script>
+<div style="display:none">
+</div>
+</body>
+</html>
