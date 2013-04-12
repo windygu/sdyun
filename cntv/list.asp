@@ -98,65 +98,65 @@ document.onselectstart=new Function("event.returnValue=false;");
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(1);" class="list_name" target="_self">央视直播HD</a></h1>
 <h2 class="lm_2" id="CHT_1" style="display: none;">
- <a href="c/index.htmlindex.html?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
- <a href="c/index.htmlindex.html?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
+ <a href="c/index.html?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
+ <a href="c/index.html?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv3">CCTV-3</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv4">CCTV-4</a>
- <a href="c/index.htmlindex.html?id=pa://cctv_p2p_hdcctv5">CCTV-5</a>
+ <a href="c/index.html?id=pa://cctv_p2p_hdcctv5">CCTV-5</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv6">CCTV-6</a>
- <a href="c/index.htmlindex.html?id=pa://cctv_p2p_hdcctv7">CCTV-7</a>
+ <a href="c/index.html?id=pa://cctv_p2p_hdcctv7">CCTV-7</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv8">CCTV-8</a>
  <a href="c/index.html?id=pb://cctv_p2p_hdcctvjilu">CCTV-9</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv10">CCTV-10</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv11">CCTV-11</a>
  <a href="c/index.html?id=pl://cctv_p2p_hdcctv12">CCTV-12</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcctvnews">CCTV-13</a>
- <a href="c/?id=pl://cctv_p2p_hdcctvkids">CCTV-14</a>
- <a href="c/?id=pl://cctv_p2p_hdcctvmusic">CCTV-15</a>
- <a href="c/?id=pb://cctv_p2p_hdcctvdoc">CCTV-9英文</a>
- <a href="c/?id=pl://cctv_p2p_cctv9">CCTV-NEWS</a>
- <a href="c/?id=pl://cctv_p2p_hdcctvxiyu">CCTV-E</a>
- <a href="c/?id=pl://cctv_p2p_hdcctvfayu">CCTV-F</a>
- <a href="c/?id=pl://cctv_p2p_cctvrussian">CCTV-R</a>
- <a href="c/?id=pl://cctv_p2p_cctvarabic">CCTV-A</a>
- <a href="c/?id=pl://cctv_p2p_hdcctv4america">CCTV-4美洲</a>
- <a href="c/?id=pl://cctv_p2p_hdcctv4euro">CCTV-4欧洲</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctvkids">CCTV-14</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctvmusic">CCTV-15</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdcctvdoc">CCTV-9英文</a>
+ <a href="c/index.html?id=pl://cctv_p2p_cctv9">CCTV-NEWS</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctvxiyu">CCTV-E</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctvfayu">CCTV-F</a>
+ <a href="c/index.html?id=pl://cctv_p2p_cctvrussian">CCTV-R</a>
+ <a href="c/index.html?id=pl://cctv_p2p_cctvarabic">CCTV-A</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctv4america">CCTV-4美洲</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdcctv4euro">CCTV-4欧洲</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcctvgaoqing">CCTV-高清</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcctvfyzq">风云足球</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcctvgaowang">高尔夫网球</a>
- <a href="c/?id=pl://cctv_p2p_gouwu">中视购物</a>
- <a href="c/?id=pb://cctv_p2p_hddianshizhinan">电视指南</a>
- <a href="c/?id=pb://cctv_p2p_v15">中学生</a>
+ <a href="c/index.html?id=pl://cctv_p2p_gouwu">中视购物</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hddianshizhinan">电视指南</a>
+ <a href="c/index.html?id=pb://cctv_p2p_v15">中学生</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(2);" class="list_name" target="_self">城市直播a-f</a></h1>
 <h2 class="lm_2" id="CHT_2" style="display: none;">
- <a href="c/?id=pl://cctv_p2p_hdanhui">安徽卫视</a>
- <a href="c/?id=pb://cctv_p2p_anqin">安庆综合</a>
- <a href="c/?id=pl://cctv_p2p_hdbtv5">北京卫视</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvwenyi">北京财经</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvkejiao">北京科教</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvyingshi">北京影视</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvshenghuo">北京生活</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvqingshao">北京青少</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdanhui">安徽卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_anqin">安庆综合</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdbtv5">北京卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvwenyi">北京财经</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvkejiao">北京科教</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvyingshi">北京影视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvshenghuo">北京生活</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvqingshao">北京青少</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdbtvtiyu">北京体育</a>
- <a href="c/?id=pb://cctv_p2p_hdbtvgongong">北京公共</a>
- <a href="c/?id=pl://cctv_p2p_hdchongqing">重庆卫视</a>
- <a href="c/?id=pl://cctv_p2p_hddongnan">东南卫视</a>
- <a href="c/?id=pl://cctv_p2p_xiamenweishi">厦门卫视</a>
- <a href="c/?id=pl://cctv_p2p_xiamen1">厦门一套</a>
- <a href="c/?id=pl://cctv_p2p_xiamen2">厦门二套</a>
- <a href="c/?id=pl://cctv_p2p_xiamen3">厦门三套</a>
- <a href="c/?id=pl://cctv_p2p_xiamen4">厦门四套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdbtvgongong">北京公共</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdchongqing">重庆卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hddongnan">东南卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_xiamenweishi">厦门卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_xiamen1">厦门一套</a>
+ <a href="c/index.html?id=pl://cctv_p2p_xiamen2">厦门二套</a>
+ <a href="c/index.html?id=pl://cctv_p2p_xiamen3">厦门三套</a>
+ <a href="c/index.html?id=pl://cctv_p2p_xiamen4">厦门四套</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(3);" class="list_name" target="_self">城市直播g</a></h1>
 <h2 class="lm_2" id="CHT_3" style="display: none;">
- <a href="c/?id=pl://cctv_p2p_hdguangdong">广东卫视</a>
- <a href="c/?id=pb://cctv_p2p_shaoguangonggong">韶关公共</a>
- <a href="c/?id=pb://cctv_p2p_shaoguanzonghe">韶关综合</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdguangdong">广东卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_shaoguangonggong">韶关公共</a>
+ <a href="c/index.html?id=pb://cctv_p2p_shaoguanzonghe">韶关综合</a>
  <a href="c/index.html?id=pa://cctv_p2p_shenzhencaijing">深圳财经</a>
- <a href="c/?id=pb://cctv_p2p_foshan">佛山综合</a>
+ <a href="c/index.html?id=pb://cctv_p2p_foshan">佛山综合</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdgzzonghe">广州综合</a>
  <a href="c/index.html?id=pa://cctv_p2p_zhuhai">珠海一套</a>
  <a href="c/index.html?id=pa://cctv_p2p_zhuhai2">珠海二套</a>
@@ -166,47 +166,47 @@ document.onselectstart=new Function("event.returnValue=false;");
  <a href="c/index.html?id=pa://cctv_p2p_hdgzenglish">广州英语</a>
  <a href="c/index.html?id=pa://cctv_p2p_cztv1">潮州综合</a>
  <a href="c/index.html?id=pa://cctv_p2p_cztv2">潮州公共</a>
- <a href="c/?id=pl://cctv_p2p_hdguangxi">广西卫视</a>
- <a href="c/?id=pb://cctv_p2p_guangxizy">广西综艺</a>
- <a href="c/?id=pl://cctv_p2p_hdgansu">甘肃卫视</a>
- <a href="c/?id=pb://cctv_p2p_jingcailanzhou">睛彩兰州</a>
- <a href="c/?id=pl://cctv_p2p_hdguizhou">贵州卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdguangxi">广西卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_guangxizy">广西综艺</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdgansu">甘肃卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_jingcailanzhou">睛彩兰州</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdguizhou">贵州卫视</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(4);" class="list_name" target="_self">城市直播h</a></h1>
 <h2 class="lm_2" id="CHT_4" style="display: none;">
- <a href="c/?id=pl://cctv_p2p_hdhebei">河北卫视</a>
- <a href="c/?id=pb://cctv_p2p_hebeinongmin">河北农民</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdhebei">河北卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hebeinongmin">河北农民</a>
  <a href="c/index.html?id=pa://cctv_p2p_hebeijingji">河北经济</a>
- <a href="c/?id=pb://cctv_p2p_sjz1">石家庄一套</a>
- <a href="c/?id=pb://cctv_p2p_sjz2">石家庄二套</a>
- <a href="c/?id=pb://cctv_p2p_sjz3">石家庄三套</a>
- <a href="c/?id=pb://cctv_p2p_sjz4">石家庄四套</a>
- <a href="c/?id=pb://cctv_p2p_xingtaishenghuo">邢台生活</a>
- <a href="c/?id=pb://cctv_p2p_xingtaiyule">邢台娱乐</a>
- <a href="c/?id=pb://cctv_p2p_xingtaizonghe">邢台综合</a>
- <a href="c/?id=pl://cctv_p2p_hdheilongjiang">黑龙江卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sjz1">石家庄一套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sjz2">石家庄二套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sjz3">石家庄三套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sjz4">石家庄四套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_xingtaishenghuo">邢台生活</a>
+ <a href="c/index.html?id=pb://cctv_p2p_xingtaiyule">邢台娱乐</a>
+ <a href="c/index.html?id=pb://cctv_p2p_xingtaizonghe">邢台综合</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdheilongjiang">黑龙江卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_haerbin1">哈尔滨新闻</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdhubei">湖北卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_wuhanjiaoyu">武汉教育</a>
- <a href="c/?id=pb://cctv_p2p_jinzhouxw">荆州新闻</a>
- <a href="c/?id=pb://cctv_p2p_hubeidianshitai">湖北综合</a>
- <a href="c/?id=pb://cctv_p2p_hubeigonggong">湖北公共</a>
- <a href="c/?id=pb://cctv_p2p_hubeijiaoyu">湖北教育</a>
- <a href="c/?id=pb://cctv_p2p_hubeitiyu">湖北体育</a>
- <a href="c/?id=pb://cctv_p2p_hubeiyingshi">湖北影视</a>
- <a href="c/?id=pb://cctv_p2p_hubeijingshi">湖北经视</a>
- <a href="c/?id=pb://cctv_p2p_hubeigouwu">湖北购物</a>
+ <a href="c/index.html?id=pb://cctv_p2p_jinzhouxw">荆州新闻</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeidianshitai">湖北综合</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeigonggong">湖北公共</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeijiaoyu">湖北教育</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeitiyu">湖北体育</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeiyingshi">湖北影视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeijingshi">湖北经视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeigouwu">湖北购物</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdhunan">湖南卫视</a>
- <a href="c/?id=pl://cctv_p2p_hdhenan">河南卫视</a>
- <a href="c/?id=pl://cctv_p2p_hdlvyou">旅游卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdhenan">河南卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdlvyou">旅游卫视</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(5);" class="list_name" target="_self">城市直播j-q</a></h1>
 <h2 class="lm_2" id="CHT_5" style="display: none;">
- <a href="c/?id=pl://cctv_p2p_hdjilin">吉林卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdjilin">吉林卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdyanbian">延边卫视</a>
- <a href="c/?id=pl://cctv_p2p_jiangsu">江苏卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_jiangsu">江苏卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_wxtv1">无锡新闻综合</a>
  <a href="c/index.html?id=pa://cctv_p2p_wxtv2">无锡都市资讯</a>
  <a href="c/index.html?id=pa://cctv_p2p_wxtv3">无锡娱乐</a>
@@ -214,64 +214,64 @@ document.onselectstart=new Function("event.returnValue=false;");
  <a href="c/index.html?id=pa://cctv_p2p_wxtv5">无锡经济</a>
  <a href="c/index.html?id=pa://cctv_p2p_wxtv6">无锡移动</a>
  <a href="c/index.html?id=pa://cctv_p2p_nanjing1">南京新闻</a>
- <a href="c/?id=pb://cctv_p2p_nantongshenghuo">南通生活</a>
- <a href="c/?id=pb://cctv_p2p_nantongkejiao">南通科教</a>
- <a href="c/?id=pb://cctv_p2p_nantongxinwen">南通新闻</a>
- <a href="c/?id=pl://cctv_p2p_hdjiangxi">江西卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_nantongshenghuo">南通生活</a>
+ <a href="c/index.html?id=pb://cctv_p2p_nantongkejiao">南通科教</a>
+ <a href="c/index.html?id=pb://cctv_p2p_nantongxinwen">南通新闻</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdjiangxi">江西卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_nanchangxinwen">南昌新闻</a>
- <a href="c/?id=pl://cctv_p2p_hdliaoning">辽宁卫视</a>
- <a href="c/?id=pb://cctv_p2p_hubeigonggong">辽宁都市</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdliaoning">辽宁卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeigonggong">辽宁都市</a>
  <a href="c/index.html?id=pa://cctv_p2p_liaoningdushi">大连新闻</a>
- <a href="c/?id=pb://cctv_p2p_hubeitiyu">内蒙古卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeitiyu">内蒙古卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_mengyu">内蒙古蒙语</a>
- <a href="c/?id=pb://cctv_p2p_hubeijingshi">宁夏卫视</a>
- <a href="c/?id=pb://cctv_p2p_hdqinghai">青海卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hubeijingshi">宁夏卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdqinghai">青海卫视</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(6);" class="list_name" target="_self">城市直播s-t</a></h1>
 <h2 class="lm_2" id="CHT_6" style="display: none;">
- <a href="c/?id=pl://cctv_p2p_dongfang">东方卫视</a>
- <a href="c/?id=pl://cctv_p2p_hdshanghaikatong">炫动卡通</a>
+ <a href="c/index.html?id=pl://cctv_p2p_dongfang">东方卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdshanghaikatong">炫动卡通</a>
  <a href="c/index.html?id=pa://cctv_p2p_shanghaixinwen">上海新闻</a>
- <a href="c/?id=pl://cctv_p2p_hdshan-xi">山西卫视</a>
- <a href="c/?id=pb://cctv_p2p_lvliang1">吕梁广播</a>
- <a href="c/?id=pl://cctv_p2p_hdshandong">山东卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdshan-xi">山西卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_lvliang1">吕梁广播</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdshandong">山东卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_jinan1">济南新闻</a>
  <a href="c/index.html?id=pa://cctv_p2p_qtv1">青岛新闻</a>
- <a href="c/?id=pb://cctv_p2p_shandongjiaoyu380">山东教育</a>
- <a href="c/?id=pb://cctv_p2p_sdtv1">烟台新闻综合</a>
- <a href="c/?id=pb://cctv_p2p_sdtv2">烟台经济生活</a>
- <a href="c/?id=pb://cctv_p2p_sdtv4">烟台公共</a>
- <a href="c/?id=pl://cctv_p2p_hdsichuan">四川卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_shandongjiaoyu380">山东教育</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sdtv1">烟台新闻综合</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sdtv2">烟台经济生活</a>
+ <a href="c/index.html?id=pb://cctv_p2p_sdtv4">烟台公共</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdsichuan">四川卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcdtv1">成都新闻</a>
  <a href="c/index.html?id=pa://cctv_p2p_hdcdtv5">成都公共</a>
- <a href="c/?id=pb://cctv_p2p_kangbaweishi">康巴卫视</a>
- <a href="c/?id=pb://cctv_p2p_hdshanvxi">陕西卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_kangbaweishi">康巴卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdshanvxi">陕西卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_xianyang">西安综合</a>
- <a href="c/?id=pl://cctv_p2p_hdtianjin">天津卫视</a>
- <a href="c/?id=pb://cctv_p2p_bhtv1">滨海一套</a>
- <a href="c/?id=pb://cctv_p2p_bhtv2">滨海二套</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdtianjin">天津卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_bhtv1">滨海一套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_bhtv2">滨海二套</a>
 </h2></li>
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(7);" class="list_name" target="_self">城市直播x-z</a></h1>
 <h2 class="lm_2" id="CHT_7" style="display: none;">
- <a href="c/?id=pb://cctv_p2p_hktv">香港卫视</a>
- <a href="c/?id=pb://cctv_p2p_jktv">健康卫视</a>
- <a href="c/?id=pl://cctv_p2p_hdxinjiang">新疆卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hktv">香港卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_jktv">健康卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdxinjiang">新疆卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_weiyu">新疆维语</a>
  <a href="c/index.html?id=pa://cctv_p2p_weiyuzongyi">新疆维语综艺</a>
  <a href="c/index.html?id=pa://cctv_p2p_weiyujingji">新疆维语经济</a>
  <a href="c/index.html?id=pa://cctv_p2p_hayu">新疆哈语</a>
  <a href="c/index.html?id=pa://cctv_p2p_hayuzongyi">新疆哈语综艺</a>
- <a href="c/?id=pl://cctv_p2p_hdxizang2">西藏卫视</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdxizang2">西藏卫视</a>
  <a href="c/index.html?id=pa://cctv_p2p_zangyu">西藏藏语</a>
- <a href="c/?id=pl://cctv_p2p_hdyunnan">云南卫视</a>
- <a href="c/?id=pb://cctv_p2p_lijiang_zhonghe">丽江综合</a>
- <a href="c/?id=pb://cctv_p2p_lijiang_gg">丽江公共</a>
- <a href="c/?id=pl://cctv_p2p_hdzhejiang">浙江卫视</a>
- <a href="c/?id=pb://cctv_p2p_hdningbo1">宁波一套</a>
- <a href="c/?id=pb://cctv_p2p_hdningbo2">宁波二套</a>
- <a href="c/?id=pb://cctv_p2p_hdningbo3">宁波三套</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdyunnan">云南卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_lijiang_zhonghe">丽江综合</a>
+ <a href="c/index.html?id=pb://cctv_p2p_lijiang_gg">丽江公共</a>
+ <a href="c/index.html?id=pl://cctv_p2p_hdzhejiang">浙江卫视</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdningbo1">宁波一套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdningbo2">宁波二套</a>
+ <a href="c/index.html?id=pb://cctv_p2p_hdningbo3">宁波三套</a>
 </h2></li>
 
  <li class="ft">
