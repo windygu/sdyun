@@ -36,7 +36,7 @@ COLOR: #ff6600;TEXT-INDENT: 2px; padding-top:5px; LINE-HEIGHT: 22px; HEIGHT: 22p
 </style> 
 <script language="javascript">
 <!--
-if(parent.frames.length==0){top.location.href="http://wpa.qq.com/msgrd?v=3&uin=1160038650&site=qq&menu=yes";}
+if(parent.frames.length==0){top.location.href="http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes";}
 -->
 </script>          
 <SCRIPT language="VBScript" type="text/VBScript">
@@ -91,16 +91,16 @@ document.onselectstart=new Function("event.returnValue=false;");
 
  <li class="ft">
 <hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
-      <h1 class="ft_1"><a target="_blank" title="CNTV直播" href="http://wpa.qq.com/msgrd?v=3&uin=1160038650&site=qq&menu=yes">松达影视盒－CNTV直播</a><hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
+      <h1 class="ft_1"><a target="_blank" title="CNTV直播" href="http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes">松达影视盒－CNTV直播</a><hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
 </h1></li>
 
 
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(1);" class="list_name" target="_self">央视直播HD</a></h1>
 <h2 class="lm_2" id="CHT_1" style="display: none;">
- <a href="/svn/cntv/c/?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
- <a href="c/?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
- <a href="/svn/cntv/c/?id=pl://cctv_p2p_hdcctv3">CCTV-3</a>
+ <a href="/svn/cntv/c/index.html?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
+ <a href="c/index.html?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
+ <a href="/svn/cntv/c/index.html?id=pl://cctv_p2p_hdcctv3">CCTV-3</a>
  <a href="c/?id=pl://cctv_p2p_hdcctv4">CCTV-4</a>
  <a href="c/?id=pa://cctv_p2p_hdcctv5">CCTV-5</a>
  <a href="c/?id=pl://cctv_p2p_hdcctv6">CCTV-6</a>
@@ -276,7 +276,7 @@ document.onselectstart=new Function("event.returnValue=false;");
 
  <li class="ft">
 <hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
-      <h1 class="ft_1"><a target="_blank" title="松达电脑科技－小松维护" href="http://wpa.qq.com/msgrd?v=3&uin=1160038650&site=qq&menu=yes">松达电脑科技－小松维护</a><hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
+      <h1 class="ft_1"><a target="_blank" title="松达电脑科技－小松维护" href="http://wpa.qq.com/msgrd?v=3&uin=695556881&site=qq&menu=yes">松达电脑科技－小松维护</a><hr width=95% size=1 color=#A9C8E4 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"> 
 </h1></li>
 
 <!-- 频道列表导航结束 -->
