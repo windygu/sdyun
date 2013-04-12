@@ -98,8 +98,8 @@ document.onselectstart=new Function("event.returnValue=false;");
 
 <li><h1 class="lm_1"> <a href="javascript:OpenChanel(1);" class="list_name" target="_self">—Î ”÷±≤•HD</a></h1>
 <h2 class="lm_2" id="CHT_1" style="display: none;">
- <a href="svn/c/?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
- <a href="svn/c/?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
+ <a href="c/?id=pa://cctv_p2p_hdcctv1">CCTV-1</a>
+ <a href="c/?id=pa://cctv_p2p_hdcctv2">CCTV-2</a>
  <a href="c/?id=pl://cctv_p2p_hdcctv3">CCTV-3</a>
  <a href="c/?id=pl://cctv_p2p_hdcctv4">CCTV-4</a>
  <a href="c/?id=pa://cctv_p2p_hdcctv5">CCTV-5</a>
