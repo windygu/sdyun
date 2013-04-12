@@ -41,7 +41,7 @@ window.onerror = killErrors;
 <script language="javascript">
 var gid;
 </script>
-<script charset="gb2312" type="text/javascript" src="cctv.js"></script>
+<script charset="gb2312" type="text/javascript" src="/svn/cntv/c/cctv.js"></script>
 <script language='JScript' for='pps' event='StateInt(state)'>
 var A=pps.iMSPlayerState,_=pps.iBufPercent;if(state==1)bMute=false;if((state==4)&&(A==0)){bbufing=true;getBufPercent();showLoading()}if(((state==4)&&(A==3)&&(_>50)) || (state==5)){bbufing=false;$("dStatus").innerHTML="\u6b63\u5728\u64ad\u653e";hideLoading()}if(state==2||state==6||state==1||state==9);if(state==8);
 </script>
